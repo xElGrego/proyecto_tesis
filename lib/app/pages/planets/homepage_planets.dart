@@ -12,7 +12,7 @@ class HomePagePlanets extends StatelessWidget {
       backgroundColor: gradientEndColor,
       body: Container(
         decoration: BoxDecoration(
-          color: verde,
+          color: Colors.white,
         ),
         child: SafeArea(
           child: Column(
@@ -22,11 +22,11 @@ class HomePagePlanets extends StatelessWidget {
                 height: 30.0,
               ),
               Text(
-                'Ciencias Naturales ',
+                'Planetas',
                 style: TextStyle(
                   fontFamily: 'Avenir',
                   fontSize: 34,
-                  color: Color(0xffffffff),
+                  color: Color(0xff47455f),
                   fontWeight: FontWeight.w900,
                 ),
                 textAlign: TextAlign.left,
@@ -89,7 +89,7 @@ class HomePagePlanets extends StatelessWidget {
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
                                           fontSize: 38,
-                                          color: const Color(0xff47455f),
+                                          color: Color(0xff47455f),
                                           fontWeight: FontWeight.w900,
                                         ),
                                         textAlign: TextAlign.left,

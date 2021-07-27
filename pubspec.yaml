@@ -57,6 +57,9 @@ flutter:
    - assets/img/planets/
    - assets/img/bacterias/
    - assets/3d/
+   - assets/3d/jet/
+   - assets/3d/shark/
+   - assets/3d/earth/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

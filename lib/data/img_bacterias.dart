@@ -2,7 +2,7 @@ List<String> images = [
 
   "assets/img/bacterias/bacterias.jpg",
   "assets/img/bacterias/bacterias.jpg",
-  "assets/img/bacterias/bacterias.png",
+  "assets/img/bacterias/bacterias.jpg",
 ];
 
 List<String> title = [

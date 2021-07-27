@@ -3,18 +3,17 @@ import 'package:flutter_cube/flutter_cube.dart';
 
 class Planets3D extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _Planets3DState createState() => _Planets3DState();
 }
 
-class _HomePageState extends State<Planets3D> {
-  Object jet;
-  Object shark;
+class _Planets3DState extends State<Planets3D> {
+  Object earth;
+
   @override
   void initState() {
-    jet = Object(fileName: "assets/3d/jet/Jet.obj");
-    shark = Object(fileName: "assets/3d/shark/shark.obj");
-    shark.rotation.setValues(0, 90, 0);
-    shark.updateTransform();
+    earth = Object(fileName: "assets/3d/earth/Earth.obj");
+    earth.rotation.setValues(0, 90, 0);
+    earth.updateTransform();
     super.initState();
   }
 
@@ -22,8 +21,13 @@ class _HomePageState extends State<Planets3D> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: Text("Planets 3D"),
+        title: Text(
+          "Planets 3D",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 25,
+          ),
+        ),
       ),
       body: Container(
         child: Column(
@@ -31,15 +35,7 @@ class _HomePageState extends State<Planets3D> {
             Expanded(
               child: Cube(
                 onSceneCreated: (Scene scene) {
-                  scene.world.add(shark);
-                  scene.camera.zoom = 10;
-                },
-              ),
-            ),
-            Expanded(
-              child: Cube(
-                onSceneCreated: (Scene scene) {
-                  scene.world.add(jet);
+                  scene.world.add(earth);
                   scene.camera.zoom = 10;
                 },
               ),

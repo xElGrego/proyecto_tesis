@@ -4,17 +4,16 @@ import 'package:proyecto_tesis/data/planetas.dart';
 import '../../../const.dart';
 
 class DetailsPlanets extends StatelessWidget {
-
   final PlanetInfo planetinfo;
 
   const DetailsPlanets({Key key, this.planetinfo}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       bottom: false,
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Stack(
           children: [
             SingleChildScrollView(
@@ -92,11 +91,13 @@ class DetailsPlanets extends StatelessWidget {
                         return Card(
                           clipBehavior: Clip.antiAlias,
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                           child: AspectRatio(
                             aspectRatio: 1,
-                            child: Image.asset(
-                              planetinfo.images[index],
+                            child: FadeInImage.assetNetwork(
+                              placeholder: 'assets/loading.gif',
+                              image: planetinfo.images[index],
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -114,7 +115,7 @@ class DetailsPlanets extends StatelessWidget {
                 color: Colors.black,
               ),
               onPressed: () {
-               Navigator.pop(context);
+                Navigator.pop(context);
               },
             ),
           ],

@@ -24,15 +24,22 @@ class _HomeBacteriasState extends State<HomePageBacteries> {
 
     return Container(
       decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [
-        Color(0xFF1b1e44),
-        Color(0xFF2d3447),
-      ], begin: Alignment.bottomCenter, end: Alignment.topCenter, tileMode: TileMode.clamp)),
+        gradient: LinearGradient(
+          colors: [
+            Color(0xFF1b1e44),
+            Color(0xFF2d3447),
+          ],
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+          tileMode: TileMode.clamp,
+        ),
+      ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              SizedBox(height: 25),
               Padding(
                 padding: const EdgeInsets.only(
                   left: 12.0,
@@ -50,10 +57,9 @@ class _HomeBacteriasState extends State<HomePageBacteries> {
                     Text(
                       "Bacterias",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 46.0,
                         fontFamily: "Calibre-Semibold",
-                        letterSpacing: 1.0,
                       ),
                     ),
                   ],
@@ -99,24 +105,6 @@ class _HomeBacteriasState extends State<HomePageBacteries> {
                   )
                 ],
               ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Row(
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.only(left: 18.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.0),
-                      child: Image.asset(
-                        "assets/img/bacterias/bacteria.jpg",
-                        width: 296.0,
-                        height: 222.0,
-                      ),
-                    ),
-                  )
-                ],
-              )
             ],
           ),
         ),

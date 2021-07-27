@@ -30,7 +30,7 @@ class CardScrollWidget extends StatelessWidget {
         var primaryCardLeft = safeWidth - widthOfPrimaryCard;
         var horizontalInset = primaryCardLeft / 2;
 
-        List<Widget> cardList = new List();
+        List<Widget> cardList = [];
 
         for (var i = 0; i < images.length; i++) {
           var delta = i - currentPage;
@@ -83,10 +83,7 @@ class CardScrollWidget extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                           
+                            SizedBox(height: 10.0),
                           ],
                         ),
                       )

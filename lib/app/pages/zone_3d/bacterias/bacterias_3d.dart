@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cube/flutter_cube.dart';
 
-class Bacteries3d extends StatefulWidget {
+class Bacteries3D extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _Bacteries3DState createState() => _Bacteries3DState();
 }
 
-class _HomePageState extends State<Bacteries3d> {
+class _Bacteries3DState extends State<Bacteries3D> {
   Object jet;
   Object shark;
   @override
@@ -22,8 +22,10 @@ class _HomePageState extends State<Bacteries3d> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: Text("Bacterias 3D"),
+        title: Text(
+          "Bacterias 3D",
+          style: TextStyle(color: Colors.black, fontSize: 25),
+        ),
       ),
       body: Container(
         child: Column(
