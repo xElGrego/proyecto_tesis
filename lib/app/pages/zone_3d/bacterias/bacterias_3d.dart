@@ -22,6 +22,7 @@ class _Bacteries3DState extends State<Bacteries3D> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: true,
         title: Text(
           "Bacterias 3D",
           style: TextStyle(color: Colors.black, fontSize: 25),

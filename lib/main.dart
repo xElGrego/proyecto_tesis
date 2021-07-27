@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_tesis/app/pages/splash/splash.dart';
 
-import 'app/pages/home/home_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
           centerTitle: true,
           color: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
           titleTextStyle: TextStyle(
             color: Colors.black,
             backgroundColor: Colors.black,
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       title: 'El Mundo de la Ciencia',
-      home: HomePage(),
+      home: Splash(),
     );
   }
 }

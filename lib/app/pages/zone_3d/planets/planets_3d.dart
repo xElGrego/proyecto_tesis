@@ -21,8 +21,10 @@ class _Planets3DState extends State<Planets3D> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: true,
+       
         title: Text(
-          "Planets 3D",
+          "Planetas 3D",
           style: TextStyle(
             color: Colors.black,
             fontSize: 25,
