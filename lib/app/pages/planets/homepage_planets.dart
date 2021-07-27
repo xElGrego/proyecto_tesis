@@ -1,72 +1,43 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:proyecto_tesis/data/planetas.dart';
 
 import '../../../const.dart';
-import '../../../data/planetas.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
-import 'details.dart';
-import 'package:get/get.dart';
+import 'details_planets.dart';
 
-class HomePageDetails extends StatelessWidget {
+class HomePagePlanets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: gradientEndColor,
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [
-                gradientStartColor,
-                gradientEndColor,
-              ],
-              end: Alignment.bottomCenter,
-              begin: Alignment.topCenter,
-              stops: [0.3, 0.7]),
+          color: verde,
         ),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 14.0),
-                child: Text(
-                  'Explore',
-                  style: TextStyle(
-                    fontFamily: 'Avenir',
-                    fontSize: 44,
-                    color: Color(0xffffffff),
-                    fontWeight: FontWeight.w900,
-                  ),
-                  textAlign: TextAlign.left,
-                ),
+              SizedBox(
+                height: 30.0,
               ),
-              DropdownButton(
-                items: [
-                  DropdownMenuItem(
-                    child: Text(
-                      'Solar System',
-                      style: TextStyle(
-                        fontFamily: 'Avenir',
-                        fontSize: 24,
-                        color: Color(0xffffffff),
-                        fontWeight: FontWeight.w500,
-                      ),
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
-                ],
-                onChanged: (value) {},
-                icon: Padding(
-                  padding: const EdgeInsets.only(left: 16.0),
-                  child: Image.asset('assets/img/planets/drop_down_icon.png'),
+              Text(
+                'Ciencias Naturales ',
+                style: TextStyle(
+                  fontFamily: 'Avenir',
+                  fontSize: 34,
+                  color: Color(0xffffffff),
+                  fontWeight: FontWeight.w900,
                 ),
-                underline: SizedBox(),
+                textAlign: TextAlign.left,
               ),
               Container(
                 height: 500,
-                padding: EdgeInsets.only(left: 32),
+                padding: EdgeInsets.only(left: 16),
                 child: Swiper(
+                  onTap: (index) {
+                    print(index);
+                  },
                   pagination: SwiperPagination(
                     builder: DotSwiperPaginationBuilder(
                       color: Colors.teal,
@@ -81,10 +52,14 @@ class HomePageDetails extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
-                        Get.to(Details(
-                          planetInfo: planets[index],
-                        ));
-                        print("InkWell en acción");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailsPlanets(
+                              planetinfo: planets[index] ,
+                            ),
+                          ),
+                        );
                       },
                       child: Stack(
                         children: [
@@ -94,45 +69,38 @@ class HomePageDetails extends StatelessWidget {
                                 height: 100.0,
                               ),
                               Card(
-                                elevation: 8.0,
+                                elevation: 5.0,
                                 color: Colors.white,
                                 shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20)),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(32.0),
+                                  padding: const EdgeInsets.only(
+                                    top: 40.0,
+                                    left: 20.0,
+                                    bottom: 80.0,
+                                  ),
                                   child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       SizedBox(height: 100.0),
                                       Text(
                                         planets[index].name,
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
-                                          fontSize: 44,
+                                          fontSize: 38,
                                           color: const Color(0xff47455f),
                                           fontWeight: FontWeight.w900,
                                         ),
                                         textAlign: TextAlign.left,
                                       ),
                                       SizedBox(
-                                        height: 15.0,
+                                        height: 20.0,
                                       ),
-                                      Text(
-                                        'Solar System',
-                                        style: TextStyle(
-                                          fontFamily: 'Avenir',
-                                          fontSize: 23,
-                                          color: primaryTextColor,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                      SizedBox(height: 32),
                                       Row(
                                         children: <Widget>[
                                           Text(
-                                            'Know more',
+                                            'Conoce más',
                                             style: TextStyle(
                                               fontFamily: 'Avenir',
                                               fontSize: 18,
@@ -140,6 +108,9 @@ class HomePageDetails extends StatelessWidget {
                                               fontWeight: FontWeight.w500,
                                             ),
                                             textAlign: TextAlign.left,
+                                          ),
+                                          SizedBox(
+                                            width: 12.0,
                                           ),
                                           Icon(
                                             Icons.arrow_forward,
@@ -153,9 +124,18 @@ class HomePageDetails extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Hero(
-                            child: Image.asset(planets[index].iconImage),
-                            tag: planets[index].position,
+                          Positioned(
+                            left: 36.0,
+                            top: 55.0,
+                            child: Hero(
+                              tag: planets[index].position,
+                              child: Image.asset(
+                                planets[index].iconImage,
+                                height: 180.0,
+                                alignment: Alignment.center,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -165,32 +145,6 @@ class HomePageDetails extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.vertical(
-            top: Radius.circular(36.0),
-          ),
-          color: navigationColor,
-        ),
-        padding: const EdgeInsets.all(14),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            IconButton(
-              icon: Image.asset('assets/img/planets/menu_icon.png'),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Image.asset('assets/img/planets/search_icon.png'),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Image.asset('assets/img/planets/profile_icon.png'),
-              onPressed: () {},
-            ),
-          ],
         ),
       ),
     );

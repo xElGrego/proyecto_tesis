@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 import 'package:proyecto_tesis/data/planetas.dart';
 
 import '../../../const.dart';
 
-class Details extends StatelessWidget {
-  final PlanetInfo planetInfo;
+class DetailsPlanets extends StatelessWidget {
 
-  const Details({Key key, this.planetInfo}) : super(key: key);
+  final PlanetInfo planetinfo;
+
+  const DetailsPlanets({Key key, this.planetinfo}) : super(key: key);
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -27,9 +29,8 @@ class Details extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SizedBox(height: 300),
                             Text(
-                              planetInfo.name,
+                              planetinfo.name,
                               style: TextStyle(
                                 fontFamily: 'Avenir',
                                 fontSize: 56,
@@ -38,7 +39,7 @@ class Details extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              'Solar System',
+                              'Planetas',
                               style: TextStyle(
                                 fontFamily: 'Avenir',
                                 fontSize: 31,
@@ -46,13 +47,11 @@ class Details extends StatelessWidget {
                                 fontWeight: FontWeight.w300,
                               ),
                             ),
-                            Divider(
-                              color: Colors.black38,
-                            ),
+                            Divider(color: Colors.black38),
                             SizedBox(height: 32),
                             Text(
-                              planetInfo.description ?? '',
-                              maxLines: 5,
+                              planetinfo.description ?? '',
+                              maxLines: 20,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 fontFamily: 'Avenir',
@@ -68,7 +67,7 @@ class Details extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 35.0, left: 20),
                         child: Text(
-                          'Gallery',
+                          'Galeria',
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 25,
@@ -81,18 +80,23 @@ class Details extends StatelessWidget {
                     ],
                   ),
                   Container(
-                    padding: EdgeInsets.only(left: 25.0),
+                    padding: EdgeInsets.only(
+                      left: 25.0,
+                      bottom: 25.0,
+                    ),
                     height: 250,
                     child: ListView.builder(
-                      itemCount: planetInfo.images.length,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: planetinfo.images.length,
                       itemBuilder: (context, index) {
                         return Card(
                           clipBehavior: Clip.antiAlias,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20)),
                           child: AspectRatio(
                             aspectRatio: 1,
-                            child: Image.network(
-                              planetInfo.images[index],
+                            child: Image.asset(
+                              planetinfo.images[index],
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -103,31 +107,14 @@ class Details extends StatelessWidget {
                 ],
               ),
             ),
-            Positioned(
-              child: Hero(
-                child: Image.asset(planetInfo.iconImage),
-                tag: planetInfo.position.toString(),
-              ),
-              right: -64,
-            ),
-            Positioned(
-              top: 60,
-              left: 10,
-              child: Text(
-                planetInfo.position.toString(),
-                style: TextStyle(
-                  fontFamily: 'Avenir',
-                  fontSize: 247,
-                  color: primaryTextColor.withOpacity(0.1),
-                  fontWeight: FontWeight.w900,
-                ),
-                textAlign: TextAlign.left,
-              ),
-            ),
             IconButton(
-              icon: Icon(Icons.arrow_back_ios),
+              icon: Icon(
+                Icons.arrow_back_ios,
+                size: 25.0,
+                color: Colors.black,
+              ),
               onPressed: () {
-                Get.back();
+               Navigator.pop(context);
               },
             ),
           ],
