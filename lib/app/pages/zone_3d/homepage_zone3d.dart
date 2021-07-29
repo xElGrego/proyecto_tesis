@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_tesis/app/pages/zone_3d/planets/planets_3d.dart';
+import 'package:proyecto_tesis/app/pages/zone_3d/planets/home_planets_3d.dart';
 
 import 'bacterias/bacterias_3d.dart';
 
@@ -26,7 +26,7 @@ class HomePageZone3d extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Planets3D(),
+                    builder: (context) => HomePagePlanetModel(),
                   ),
                 );
               },

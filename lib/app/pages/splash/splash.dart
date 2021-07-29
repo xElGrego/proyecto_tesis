@@ -30,16 +30,35 @@ class _SplashState extends State<Splash> {
           children: [
             Spacer(),
             Center(
+          //Crea un widget el tamaño del hijo es la mitad de la fraccion del total espacio disponible
               child: FractionallySizedBox(
                 widthFactor: .6,
                 child: FlutterLogo(size: 400),
               ),
             ),
+
+            Text(
+              "Universidad de Guayaquil",
+              style: TextStyle(
+                fontSize: 30,
+              ),
+            ),
+             Spacer(),
+            Text(
+              "Xiomara Calderón",
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+            Text(
+              "Bella Figueroa",
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
             Spacer(),
-            Text("Universidad de Guayaquil"),
-            Text("Xiomara Calderón"),
-            Text("Bella Figueroa"),
             CircularProgressIndicator(),
+            Spacer()
           ],
         ),
       ),

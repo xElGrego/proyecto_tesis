@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_tesis/app/pages/bacterias/widget_bacterias.dart';
+
 import 'package:proyecto_tesis/data/img_bacterias.dart';
+import 'package:proyecto_tesis/data/planetas.dart';
 
 class HomePageBacteries extends StatefulWidget {
   @override
@@ -95,7 +97,7 @@ class _HomeBacteriasState extends State<HomePageBacteries> {
                   CardScrollWidget(currentPage),
                   Positioned.fill(
                     child: PageView.builder(
-                      itemCount: images.length,
+                      itemCount: planetsList.length,
                       controller: controller,
                       reverse: true,
                       itemBuilder: (context, index) {

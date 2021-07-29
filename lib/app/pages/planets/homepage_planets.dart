@@ -46,7 +46,7 @@ class HomePagePlanets extends StatelessWidget {
                       activeSize: 15.0,
                     ),
                   ),
-                  itemCount: planets.length,
+                  itemCount: planetsList.length,
                   itemWidth: MediaQuery.of(context).size.width - 2 * 64,
                   layout: SwiperLayout.STACK,
                   itemBuilder: (context, index) {
@@ -56,7 +56,7 @@ class HomePagePlanets extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => DetailsPlanets(
-                              planetinfo: planets[index] ,
+                              planetinfo: planetsList[index] ,
                             ),
                           ),
                         );
@@ -85,7 +85,7 @@ class HomePagePlanets extends StatelessWidget {
                                     children: [
                                       SizedBox(height: 100.0),
                                       Text(
-                                        planets[index].name,
+                                        planetsList[index].name,
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
                                           fontSize: 38,
@@ -128,9 +128,9 @@ class HomePagePlanets extends StatelessWidget {
                             left: 36.0,
                             top: 55.0,
                             child: Hero(
-                              tag: planets[index].position,
+                              tag: planetsList[index].position,
                               child: Image.asset(
-                                planets[index].iconImage,
+                                planetsList[index].iconImage,
                                 height: 180.0,
                                 alignment: Alignment.center,
                                 fit: BoxFit.fill,
