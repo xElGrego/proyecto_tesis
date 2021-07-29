@@ -29,7 +29,7 @@ List<PlanetInfo> planetsList = [
       'https://cdn.pixabay.com/photo/2015/06/26/18/48/mercury-822825_1280.png',
       'https://image.shutterstock.com/image-illustration/mercury-high-resolution-images-presents-600w-367615301.jpg'
     ],
-    object3d: 'asset/3d/mercurio/',
+    object3d: "assets/3d/mercurio/mercurio.obj",
   ),
   PlanetInfo(
     2,
@@ -41,7 +41,7 @@ List<PlanetInfo> planetsList = [
       'https://cdn.pixabay.com/photo/2011/12/13/14/39/venus-11022_1280.jpg',
       'https://image.shutterstock.com/image-photo/solar-system-venus-second-planet-600w-515581927.jpg'
     ],
-    object3d: 'asset/3d/venus/',
+    object3d: "assets/3d/venus/venus.obj",
   ),
   PlanetInfo(
     3,
@@ -55,7 +55,7 @@ List<PlanetInfo> planetsList = [
       'https://cdn.pixabay.com/photo/2016/01/19/17/29/earth-1149733_1280.jpg',
       'https://image.shutterstock.com/image-photo/3d-render-planet-earth-viewed-600w-1069251782.jpg'
     ],
-    object3d: 'asset/3d/tierra/',
+    object3d: "assets/3d/tierra/tierra.obj",
   ),
   PlanetInfo(
     4,
@@ -69,7 +69,7 @@ List<PlanetInfo> planetsList = [
       'https://services.meteored.com/img/article/marte-en-oposicion-en-el-perihelio-a-disfrutar-284601-1_1024.jpg',
       'https://static3.abc.es/media/ciencia/2021/02/18/marte-serie-U308834iuy-kqvC--620x349@abc.jpg',
     ],
-    object3d: 'asset/3d/marte/',
+    object3d: "assets/3d/marte/marte.obj"
   ),
   PlanetInfo(
     5,
@@ -83,7 +83,7 @@ List<PlanetInfo> planetsList = [
       'https://www.eluniverso.com/resizer/UPPpN20R0PaR_tthfETX8AC1Fdw=/600x503/smart/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/eluniverso/TJBHVVOVTZAXPOHUGIGP7PN264.jpg',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk_y6sV8k2J9Rinpdbll1h5wfra0QfgSBlpg&usqp=CAU',
     ],
-    object3d: 'asset/3d/jupiter/',
+    object3d: "assets/3d/jupiter/jupiter.obj",
   ),
   PlanetInfo(
     6,
@@ -97,7 +97,7 @@ List<PlanetInfo> planetsList = [
       'https://services.meteored.com/img/article/saturno-se-convierte-en-el-planeta-del-sistema-solar-con-mas-lunas-211761-1.jpg',
       'https://ichef.bbci.co.uk/news/640/cpsprodpb/B4CC/production/_109148264_gettyimages-645502000.jpg',
     ],
-    object3d: 'asset/3d/saturno/',
+    object3d: "assets/3d/saturno/saturno.obj",
   ),
   PlanetInfo(
     7,
@@ -112,7 +112,7 @@ List<PlanetInfo> planetsList = [
       'https://www.muycomputer.com/wp-content/uploads/2016/10/1-1-3.png',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhK-341Wf2HX6iWVItO4xbweLOX_87ccaD8A&usqp=CAU',
     ],
-    object3d: 'asset/3d/urano/',
+    object3d: "assets/3d/urano/urano.obj",
   ),
   PlanetInfo(
     8,
@@ -127,6 +127,6 @@ List<PlanetInfo> planetsList = [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4IdTMrQKis74LsZSsbbMlWX1OUnzfjRxNjA&usqp=CAU',
       'https://sites.google.com/site/elsistemasolarcom/_/rsrc/1472873856081/neptuno/NEPTUNO.jpg',
     ],
-    object3d: 'asset/3d/neptuno/',
+    object3d: "assets/3d/neptuno/neptuno.obj",
   ),
 ];
