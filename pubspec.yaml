@@ -60,9 +60,15 @@ flutter:
    - assets/3d/
    - assets/3d/jet/
    - assets/3d/shark/
-   - assets/3d/earth/
+   - assets/3d/tierra/
    - assets/3d/marte/
+   - assets/3d/mercurio/
    - assets/3d/saturno/
+   - assets/3d/jupiter/
+   - assets/3d/neptuno/
+   - assets/3d/urano/
+   - assets/3d/venus/
+
 
   #   - images/a_dot_ham.jpeg
 

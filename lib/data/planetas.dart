@@ -29,7 +29,7 @@ List<PlanetInfo> planetsList = [
       'https://cdn.pixabay.com/photo/2015/06/26/18/48/mercury-822825_1280.png',
       'https://image.shutterstock.com/image-illustration/mercury-high-resolution-images-presents-600w-367615301.jpg'
     ],
-    object3d: "assets/3d/mercurio/mercurio.obj",
+    object3d: "assets/3d/mercurio/jupiter.obj",
   ),
   PlanetInfo(
     2,
@@ -55,7 +55,7 @@ List<PlanetInfo> planetsList = [
       'https://cdn.pixabay.com/photo/2016/01/19/17/29/earth-1149733_1280.jpg',
       'https://image.shutterstock.com/image-photo/3d-render-planet-earth-viewed-600w-1069251782.jpg'
     ],
-    object3d: "assets/3d/tierra/tierra.obj",
+    object3d: "assets/3d/tierra/jupiter.obj",
   ),
   PlanetInfo(
     4,
@@ -69,7 +69,7 @@ List<PlanetInfo> planetsList = [
       'https://services.meteored.com/img/article/marte-en-oposicion-en-el-perihelio-a-disfrutar-284601-1_1024.jpg',
       'https://static3.abc.es/media/ciencia/2021/02/18/marte-serie-U308834iuy-kqvC--620x349@abc.jpg',
     ],
-    object3d: "assets/3d/marte/marte.obj"
+    object3d: "assets/3d/marte/jupiter.obj"
   ),
   PlanetInfo(
     5,
@@ -112,7 +112,7 @@ List<PlanetInfo> planetsList = [
       'https://www.muycomputer.com/wp-content/uploads/2016/10/1-1-3.png',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhK-341Wf2HX6iWVItO4xbweLOX_87ccaD8A&usqp=CAU',
     ],
-    object3d: "assets/3d/urano/urano.obj",
+    object3d: "assets/3d/urano/jupiter.obj",
   ),
   PlanetInfo(
     8,
