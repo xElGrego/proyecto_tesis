@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:proyecto_tesis/app/pages/splash/splash.dart';
 
+import 'app/pages/home/newhome_page.dart';
 import 'app/providers/planets.dart';
+
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => PlanetsProvider()),
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         title: 'El Mundo de la Ciencia',
-        home: Splash(),
+        home: Home(),
       ),
     );
   }
