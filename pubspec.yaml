@@ -69,6 +69,10 @@ flutter:
    - assets/3d/neptuno/
    - assets/3d/urano/
    - assets/3d/venus/
+   - assets/img/tejidos/tejido_animal/
+   - assets/img/tejidos/tejido_vegetal/
+   - assets/img/bacterias/bacteria_nutricion/
+   - assets/img/bacterias/bacteria_forma/
 
 
   #   - images/a_dot_ham.jpeg

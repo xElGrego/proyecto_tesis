@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'app/pages/bacterias/details_bacterias_nutricion.dart';
 import 'app/pages/planets/homepage_planets.dart';
 
 Color primaryTextColor = Color(0xFF414C6B);
@@ -14,10 +15,10 @@ Color gradientEndColor = Color(0xFF9354B9);
 Color verde = Color(0xFF81F79F);
 
 
-const temas = [
+final temas = [
   {
     "label": 'Planetas',
-    " planetas": planetas
+    "arrayMappedname": planetas
   },
   {
     "label": 'Tejidos',
@@ -30,38 +31,41 @@ const temas = [
 
 ];
 
-const planetas = [
+List<Map<String, Object>> planetas = [
  {
    "category": "Planetas",
    "label": "Planetas",
-   "image": "assets/img/planets/mercury.png",
-   "widget": HomePagePlanets
-
+   "image": "assets/img/planets/home_planeta.jpg",
+   "widget": HomePagePlanets(),
  },
 ];
 
-const tejidos = [
+List<Map<String, Object>> tejidos = [
   {
    "category": "Tejidos",
-   "label": "Tejidos 1",
-   "image": "assets/sofa-2.png",
+   "label": "Tejido Vegetal",
+   "image": "assets/img/tejidos/tejido_vegetal/tejido_vegetal_home.jpg",
+
  },
   {
-   "category": "Sofa",
-   "label": "Tejidos 2",
-   "image": "assets/sofa-1.png",
+   "category": "Tejidos",
+   "label": "Tejido Animal",
+   "image": "assets/img/tejidos/tejido_animal/tejido_animal_home.jfif",
+
  }
 ];
 
-const bacterias = [
+List<Map<String, Object>> bacterias = [
  {
    "category": "Bacterias",
-   "label": "Bacterias 1",
-   "image": "assets/cupboard-2.jpg",
+   "label": "Bacterias según su forma",
+   "image": "assets/img/bacterias/bacteria_forma/bacteria_forma.jpg",
+   "widget": BacteriaNutricionDetail(),
  },
   {
    "category": "Bacterias",
-   "label": "Bacterias 2",
-   "image": "assets/cupboard-1.jpg",
+   "label": "Bacterias según su nutrición",
+   "image": "assets/img/bacterias/bacteria_nutricion/bacteria_nutricion.jpg",
+   "widget": BacteriaNutricionDetail(),
  },
 ];

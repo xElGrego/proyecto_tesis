@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:proyecto_tesis/app/widgets/text.dart';
 
 import '../../../config/config.dart';
@@ -19,9 +20,10 @@ class _HomeState extends State<Home> {
     SizeConfig().init(context);
     return Scaffold(
       backgroundColor: AppColors.white,
-      body: ListView(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SizedBox(height: SizeConfig.blockSizeVertical * 4),
+          SizedBox(height: SizeConfig.blockSizeVertical * 1),
           Padding(
             padding: standardPaddingX,
             child: PrimaryText(
@@ -30,19 +32,17 @@ class _HomeState extends State<Home> {
               size: 36,
             ),
           ),
-          SizedBox(height: SizeConfig.blockSizeVertical * 3),
           Padding(
             padding: standardPaddingX,
             child: Text(
               "La ciencia es un sistema que organiza y ordena el conocimiento a través de preguntas comprobables y un método estructurado que estudia e interpreta los fenómenos naturales, sociales y artificiales.​",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
           ),
-          SizedBox(height: SizeConfig.blockSizeVertical * 3),
           SizedBox(
-            height: SizeConfig.blockSizeVertical * 7.5,
+            height: SizeConfig.blockSizeVertical * 8.5,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: temas.length,
@@ -79,36 +79,34 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          SizedBox(
-            height: SizeConfig.blockSizeVertical * 2,
-          ),
           Padding(
             padding: standardPaddingX,
             child: Row(
               children: [
                 PrimaryText(
-                  text: 'Popular',
+                  text: 'Temas',
                   fontWeight: FontWeight.w800,
                   size: 28,
                 ),
               ],
             ),
           ),
-          SizedBox(height: SizeConfig.blockSizeVertical * 4),
-          Expanded(
+          Container(
+            height: SizeConfig.blockSizeVertical * 32,
             child: Padding(
               padding: standardPaddingX,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(
-                  selectedCategoryList.length,
-                  (index) => cardTheme(
+              child: ListView.builder(
+                addAutomaticKeepAlives: false,
+                itemCount: selectedCategoryList.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, i) {
+                  return cardTheme(
                     context,
-                    selectedCategoryList[index]["image"],
-                    selectedCategoryList[index]["label"],
-                    selectedCategoryList[index]["clase"],
-                  ),
-                ),
+                    selectedCategoryList[i]["image"],
+                    selectedCategoryList[i]["label"],
+                    selectedCategoryList[i]["widget"],
+                  );
+                },
               ),
             ),
           ),
@@ -117,55 +115,40 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget cardTheme(BuildContext context, String image, String label,Widget clase) {
-
+  Widget cardTheme(BuildContext context, String image, String label, Widget widget) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => clase,
+            builder: (context) => widget,
           ),
         );
       },
-      child: Hero(
-        tag: image,
-        child: Container(
-          padding: EdgeInsets.all(10),
-          width: (SizeConfig.screenWidth - 80) / 2,
-          height: SizeConfig.blockSizeVertical * 30,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(image),
-              fit: BoxFit.cover,
+      child: Padding(
+        padding: const EdgeInsets.only(right : 18.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            PrimaryText(
+              text: label,
+              fontWeight: FontWeight.w500,
+              size: 18,
             ),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: AppColors.white,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        PrimaryText(text: label, color: AppColors.textGray, size: 16),
-                        SizedBox(height: 5),
-                        SizedBox(height: 5),
-                      ],
-                    ),
-                  ),
-                ],
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+              width: (SizeConfig.screenWidth - 70) / 1,
+              height: SizeConfig.blockSizeVertical * 25,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey),
+                image: DecorationImage(
+                  image: AssetImage(image),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(20),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

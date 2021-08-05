@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_tesis/app/pages/zone_3d/planets/model_planet.dart';
 import 'package:proyecto_tesis/data/planetas.dart';
 
 import '../../../const.dart';
@@ -60,6 +61,19 @@ class DetailsPlanets extends StatelessWidget {
                               ),
                             ),
                             Divider(color: Colors.black38),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Planets3D(
+                                      planetinfo:planetinfo,
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: Text("Ver objecto 3d"),
+                            ),
                           ],
                         ),
                       ),

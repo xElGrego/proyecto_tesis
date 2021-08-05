@@ -1,3 +1,0 @@
-class BacteriaInfo {
-  BacteriaInfo();
-}

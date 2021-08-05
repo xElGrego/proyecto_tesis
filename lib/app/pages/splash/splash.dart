@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:proyecto_tesis/app/pages/home/home_page.dart';
+import 'package:proyecto_tesis/app/pages/home/newhome_page.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -16,7 +16,7 @@ class _SplashState extends State<Splash> {
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => HomePage(),
+          builder: (context) => Home(),
         ),
       ),
     );
@@ -47,13 +47,13 @@ class _SplashState extends State<Splash> {
             Text(
               "Xiomara Calderón",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 22,
               ),
             ),
             Text(
               "Bella Figueroa",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 22,
               ),
             ),
             Spacer(),
