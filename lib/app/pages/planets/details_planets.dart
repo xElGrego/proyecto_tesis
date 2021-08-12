@@ -122,6 +122,14 @@ class DetailsPlanets extends StatelessWidget {
                 ],
               ),
             ),
+             Positioned(
+              top: -110,
+              child: Hero(
+                child: Image.asset(planetinfo.iconImage),
+                tag: planetinfo.position.toString(),
+              ),
+              right: -184,
+            ),
             IconButton(
               icon: Icon(
                 Icons.arrow_back_ios,

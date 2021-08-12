@@ -26,7 +26,7 @@ List<PlanetInfo> planetsList = [
     images: [
       'https://cdn.pixabay.com/photo/2013/07/18/10/57/mercury-163610_1280.jpg',
       'https://cdn.pixabay.com/photo/2014/07/01/11/38/planet-381127_1280.jpg',
-      'https://cdn.pixabay.com/photo/2015/06/26/18/48/mercury-822825_1280.png',
+      'https://www.lpi.usra.edu/planetary_news/wp-content/uploads/2020/06/Mercury-internal-structure.jpg',
       'https://image.shutterstock.com/image-illustration/mercury-high-resolution-images-presents-600w-367615301.jpg'
     ],
     object3d: "assets/3d/mercurio/jupiter.obj",

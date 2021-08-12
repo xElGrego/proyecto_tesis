@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_tesis/app/widgets/text.dart';
 import 'package:proyecto_tesis/config/config.dart';
-import 'package:proyecto_tesis/data/bacterias_nutricion.dart';
+import 'package:proyecto_tesis/data/tejidos_vegetales.dart';
 
 import '../../colors.dart';
 
-class BacteriaNutricionDetail extends StatelessWidget {
+class TejidosVegetalesDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-      itemCount: bacteriaNutricionList.length,
+      itemCount: tejidosvegetalesList.length,
       itemBuilder: (context, index) {
         return Scaffold(
           backgroundColor: AppColors.white,
@@ -24,7 +24,7 @@ class BacteriaNutricionDetail extends StatelessWidget {
                   width: SizeConfig.screenWidth,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(bacteriaNutricionList[index].image),
+                      image: AssetImage(tejidosvegetalesList[index].image),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -87,7 +87,7 @@ class BacteriaNutricionDetail extends StatelessWidget {
                           height: SizeConfig.blockSizeVertical * 3.5,
                         ),
                         PrimaryText(
-                          text: bacteriaNutricionList[index].title,
+                          text: tejidosvegetalesList[index].title,
                           size: 26,
                           fontWeight: FontWeight.w700,
                         ),
@@ -98,7 +98,7 @@ class BacteriaNutricionDetail extends StatelessWidget {
                           height: SizeConfig.blockSizeVertical * 2,
                         ),
                         PrimaryText(
-                          text: bacteriaNutricionList[index].concept,
+                          text: tejidosvegetalesList[index].concept,
                           size: 17,
                           color: Colors.grey[500],
                           fontWeight: FontWeight.w500,

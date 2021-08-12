@@ -24,7 +24,9 @@ dependencies:
   flutter_swiper :
   flutter_cube: ^0.0.6 
   provider:
-  flutter_svg: ^0.22.0
+  flutter_layout_grid: ^0.10.1
+  flutter_svg: ^0.17.4
+  google_fonts: ^1.1.0
 
 
 
@@ -73,6 +75,8 @@ flutter:
    - assets/img/tejidos/tejido_vegetal/
    - assets/img/bacterias/bacteria_nutricion/
    - assets/img/bacterias/bacteria_forma/
+   - assets/img/contaminacion/
+   - assets/img/areas_protegidas/
 
 
   #   - images/a_dot_ham.jpeg
