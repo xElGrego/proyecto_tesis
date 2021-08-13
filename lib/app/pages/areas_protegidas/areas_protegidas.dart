@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_tesis/app/widgets/text.dart';
 import 'package:proyecto_tesis/config/config.dart';
-import 'package:proyecto_tesis/data/cambio_climatico.dart';
+import 'package:proyecto_tesis/data/areas_protegidas.dart';
 
 import '../../colors.dart';
 
-class ContaminacionAguaDetails extends StatelessWidget {
+class AreasProtegidasDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-      itemCount: cambioclimaticoList.length,
+      itemCount: areasprotegidasList.length,
       itemBuilder: (context, index) {
         return Scaffold(
           backgroundColor: AppColors.white,
@@ -24,7 +24,7 @@ class ContaminacionAguaDetails extends StatelessWidget {
                   width: SizeConfig.screenWidth,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(cambioclimaticoList[index].image),
+                      image: AssetImage(areasprotegidasList[index].image),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -87,7 +87,7 @@ class ContaminacionAguaDetails extends StatelessWidget {
                           height: SizeConfig.blockSizeVertical * 3.5,
                         ),
                         PrimaryText(
-                          text: cambioclimaticoList[index].title,
+                          text: areasprotegidasList[index].title,
                           size: 26,
                           fontWeight: FontWeight.w700,
                         ),
@@ -98,7 +98,7 @@ class ContaminacionAguaDetails extends StatelessWidget {
                           height: SizeConfig.blockSizeVertical * 2,
                         ),
                         PrimaryText(
-                          text: cambioclimaticoList[index].concept,
+                          text: areasprotegidasList[index].concept,
                           size: 17,
                           color: Colors.grey[500],
                           fontWeight: FontWeight.w500,

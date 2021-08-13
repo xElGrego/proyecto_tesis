@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'app/pages/areas_protegidas/areas_protegidas.dart';
 import 'app/pages/bacterias/details_bacterias_forma.dart';
 import 'app/pages/bacterias/details_bacterias_nutricion.dart';
+import 'app/pages/cambio_climatico/cambio_climatico.dart';
+import 'app/pages/carbono/carbono_details.dart';
 import 'app/pages/contaminacion_agua/contaminacion_agua.dart';
+import 'app/pages/nevados/nevados_details.dart';
 import 'app/pages/planets/homepage_planets.dart';
 import 'app/pages/tejidos/details_tejidos_animals.dart';
 import 'app/pages/tejidos/details_tejidos_vegetales.dart';
@@ -37,12 +41,35 @@ final temas = [
     "label": 'Contaminacion del agua',
     "arrayMappedname": contaminacion
   },
+  {
+    "label": 'El elemento Carbono',
+    "arrayMappedname": carbono
+  },
 
   {
     "label": 'Áreas protegidas',
     "arrayMappedname": areasProtegidas
   },
 
+  {
+    "label": 'El Cambio Climático',
+    "arrayMappedname": cambioClimatico
+  },
+
+  {
+    "label": 'Nevados',
+    "arrayMappedname": nevados
+  },
+/* 
+  {
+    "label": 'Impacto Humano',
+    "arrayMappedname": impactoHumano
+  },
+
+  {
+    "label": 'Corrientes Marinas',
+    "arrayMappedname": corrientesMarinas
+  }, */
 ];
 
 List<Map<String, Object>> planetas = [
@@ -101,8 +128,55 @@ List<Map<String, Object>> areasProtegidas = [
  {
    "category": "Areas Protegidas",
    "label": "Áreas protegidas como estrategias de conservación",
-   "image": "assets/img/bacterias/bacteria_forma/bacteria_forma.jpg",
-   "widget": BacteriaFormaDetail(),
+   "image": "assets/img/areas_protegidas/areas_protegidas_home.jpg",
+   "widget": AreasProtegidasDetails(),
  },
 
 ];
+
+
+List<Map<String, Object>> carbono = [
+ {
+   "category": "Carbono",
+   "label": "Carbono",
+   "image": "assets/img/carbono/carbono_home.jpg",
+   "widget": CarbonoDetails(),
+ },
+];
+
+List<Map<String, Object>> cambioClimatico = [
+ {
+   "category": "El cambio climático",
+   "label": "El Cambio Climático",
+   "image": "assets/img/cambio_climatico/cambio_climatico_home.jfif",
+   "widget": CambioClimaticoDetails(),
+ },
+];
+
+
+List<Map<String, Object>> nevados = [
+ {
+   "category": "",
+   "label": "Nevados",
+   "image": "assets/img/nevados/nevados_home.jfif",
+   "widget": NevadosDetails(),
+ },
+];
+
+/* List<Map<String, Object>> impactoHumano = [
+ {
+   "category": "",
+   "label": "Impaco Humano",
+   "image": "assets/img/nevados/nevados_home.jfif",
+   "widget": ImpactoHumanoDetails(),
+ },
+];
+
+List<Map<String, Object>> corrientesMarinas = [
+ {
+   "category": "",
+   "label": "Impaco Humano",
+   "image": "assets/img/nevados/nevados_home.jfif",
+   "widget": CorrientesMarinasDetails(),
+ },
+]; */

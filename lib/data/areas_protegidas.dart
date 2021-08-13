@@ -42,7 +42,7 @@ List<AreasProtegidas> areasprotegidasList = [
     title: 'Parque Nacional Sumaco-Napo-Galeras',
     concept:
         "Se encuentra en las provincias del Napo y Orellana sobre el macizo de Sumaco. Tiene 100.045 hectáreas",
-    image: "assets/img/areas_protegidas/sumaco.jpg",
+    image: "assets/img/areas_protegidas/sumaco.png",
   ),
 
    

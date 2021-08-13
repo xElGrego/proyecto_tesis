@@ -25,7 +25,6 @@ dependencies:
   flutter_cube: ^0.0.6 
   provider:
   flutter_layout_grid: ^0.10.1
-  flutter_svg: ^0.17.4
   google_fonts: ^1.1.0
 
 
@@ -77,6 +76,12 @@ flutter:
    - assets/img/bacterias/bacteria_forma/
    - assets/img/contaminacion/
    - assets/img/areas_protegidas/
+   - assets/img/carbono/
+   - assets/img/corrientes_marinas/
+   - assets/img/impacto_humano/
+   - assets/img/nevados/
+   - assets/img/cambio_climatico/
+
 
 
   #   - images/a_dot_ham.jpeg
