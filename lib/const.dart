@@ -7,10 +7,12 @@ import 'app/pages/cambio_climatico/cambio_climatico.dart';
 import 'app/pages/carbono/carbono_details.dart';
 import 'app/pages/contaminacion_agua/contaminacion_agua.dart';
 import 'app/pages/nevados/nevados_details.dart';
-import 'app/pages/planets/homepage_planets.dart';
+import 'app/pages/planets/details_planets.dart';
 import 'app/pages/tejidos/details_tejidos_animals.dart';
 import 'app/pages/tejidos/details_tejidos_vegetales.dart';
 
+
+/* Colores de la app */
 Color primaryTextColor = Color(0xFF414C6B);
 Color secondaryTextColor = Color(0xFFE4979E);
 Color titleTextColor = Colors.white;
@@ -18,10 +20,12 @@ Color contentTextColor = Color(0xff868686);
 Color navigationColor = Color(0xFF6751B5);
 Color gradientStartColor = Color(0xFF0050AC);
 Color gradientEndColor = Color(0xFF9354B9);
-
-
 Color verde = Color(0xFF81F79F);
 
+
+
+
+/* Temas */
 
 final temas = [
   {
@@ -42,7 +46,7 @@ final temas = [
     "arrayMappedname": contaminacion
   },
   {
-    "label": 'El elemento Carbono',
+    "label": 'El elemento carbono',
     "arrayMappedname": carbono
   },
 
@@ -52,12 +56,12 @@ final temas = [
   },
 
   {
-    "label": 'El Cambio Climático',
+    "label": 'El cambio climático',
     "arrayMappedname": cambioClimatico
   },
 
   {
-    "label": 'Nevados',
+    "label": 'Nevados del Ecuador',
     "arrayMappedname": nevados
   },
 /* 
@@ -77,7 +81,7 @@ List<Map<String, Object>> planetas = [
    "category": "Planetas",
    "label": "Planetas",
    "image": "assets/img/planets/home_planeta.jpg",
-   "widget": HomePagePlanets(),
+   "widget": DetailsPlanets(),
  },
 ];
 
@@ -117,7 +121,7 @@ List<Map<String, Object>> bacterias = [
 List<Map<String, Object>> contaminacion = [
  {
    "category": "Contaminacion",
-   "label": "Contaminacion del Agua",
+   "label": "Contaminación del agua",
    "image": "assets/img/contaminacion/agua_home.jpg",
    "widget": ContaminacionAguaDetails(),
  },
@@ -157,7 +161,7 @@ List<Map<String, Object>> cambioClimatico = [
 List<Map<String, Object>> nevados = [
  {
    "category": "",
-   "label": "Nevados",
+   "label": "Nevados del Ecuador",
    "image": "assets/img/nevados/nevados_home.jfif",
    "widget": NevadosDetails(),
  },

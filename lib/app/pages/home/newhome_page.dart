@@ -79,18 +79,7 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          Padding(
-            padding: standardPaddingX,
-            child: Row(
-              children: [
-                PrimaryText(
-                  text: 'Temas',
-                  fontWeight: FontWeight.w800,
-                  size: 28,
-                ),
-              ],
-            ),
-          ),
+
           Container(
             height: SizeConfig.blockSizeVertical * 32,
             child: Padding(

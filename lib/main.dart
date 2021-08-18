@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'app/pages/home/newhome_page.dart';
+import 'app/pages/splash/splash.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       title: 'El Mundo de la Ciencia',
-      home: Home(),
+      home: Splash(),
     );
   }
 }

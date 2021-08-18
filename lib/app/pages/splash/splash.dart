@@ -36,7 +36,6 @@ class _SplashState extends State<Splash> {
                 child: FlutterLogo(size: 400),
               ),
             ),
-
             Text(
               "Universidad de Guayaquil",
               style: TextStyle(
@@ -45,13 +44,13 @@ class _SplashState extends State<Splash> {
             ),
              Spacer(),
             Text(
-              "Xiomara Calderón",
+              "Andrea Xiomara Calderón Ronquillo",
               style: TextStyle(
                 fontSize: 22,
               ),
             ),
             Text(
-              "Bella Figueroa",
+              "Bella Yamileth Figueroa Salazar",
               style: TextStyle(
                 fontSize: 22,
               ),

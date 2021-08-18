@@ -60,8 +60,6 @@ flutter:
    - assets/img/planets/
    - assets/img/bacterias/
    - assets/3d/
-   - assets/3d/jet/
-   - assets/3d/shark/
    - assets/3d/tierra/
    - assets/3d/marte/
    - assets/3d/mercurio/
