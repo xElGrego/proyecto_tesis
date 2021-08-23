@@ -4,6 +4,7 @@ import 'package:proyecto_tesis/config/config.dart';
 import 'package:proyecto_tesis/data/areas_protegidas.dart';
 
 import '../../colors.dart';
+import 'areas_protegidas_actividad..dart';
 
 class AreasProtegidasDetails extends StatelessWidget {
   @override
@@ -25,7 +26,7 @@ class AreasProtegidasDetails extends StatelessWidget {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(areasprotegidasList[index].image),
-                      fit: BoxFit.cover,
+                      fit: BoxFit.contain,
                     ),
                   ),
                   child: Padding(
@@ -41,7 +42,10 @@ class AreasProtegidasDetails extends StatelessWidget {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            constraints: BoxConstraints(minWidth: 10, maxWidth: 50,),
+                            constraints: BoxConstraints(
+                              minWidth: 10,
+                              maxWidth: 50,
+                            ),
                             child: Icon(
                               Icons.chevron_left,
                               color: AppColors.black,
@@ -84,16 +88,14 @@ class AreasProtegidasDetails extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: SizeConfig.blockSizeVertical * 3.5,
+                          height: SizeConfig.blockSizeVertical * 1.5,
                         ),
                         PrimaryText(
                           text: areasprotegidasList[index].title,
                           size: 26,
                           fontWeight: FontWeight.w700,
                         ),
-                        SizedBox(
-                          height: SizeConfig.blockSizeVertical * 2.5,
-                        ),
+
                         SizedBox(
                           height: SizeConfig.blockSizeVertical * 2,
                         ),
@@ -101,13 +103,40 @@ class AreasProtegidasDetails extends StatelessWidget {
                           text: areasprotegidasList[index].concept,
                           size: 17,
                           color: Colors.grey[500],
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w700,
                         ),
+                        SizedBox(
+                          height: SizeConfig.blockSizeVertical * 2,
+                        ),
+                        
+                        if (index >= areasprotegidasList.length - 1)
+                                        ElevatedButton(
+                                          child: Text(
+                                            'Ir a la actividad',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                            ),
+                                          ),
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => HomeAreasActividad(),
+                                              ),
+                                            );
+                                          },
+                                        ),
+                    
                       ],
+                      
+                      
                     ),
+                    
                   ),
+                  
                 ),
               ],
+              
             ),
           ),
         );

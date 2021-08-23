@@ -1,19 +1,20 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:proyecto_tesis/app/pages/areas_protegidas/areas_protegidas_model.dart';
-import 'package:proyecto_tesis/app/pages/home/newhome_page.dart';
 
-import 'data_areasprotegidas.dart';
+import 'carbono_model.dart';
+import 'data_carbono.dart';
 
-class HomeAreasActividad extends StatefulWidget {
+
+
+
+
+class HomeActividadCarbono extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<HomeAreasActividad> {
-  List<TileModelAreas> gridViewTiles = [];
-  List<TileModelAreas> questionPairs = [];
+class _HomeState extends State<HomeActividadCarbono> {
+  List<TileModelCarbono> gridViewTiles = [];
+  List<TileModelCarbono> questionPairs = [];
 
   @override
   void initState() {
@@ -27,7 +28,7 @@ class _HomeState extends State<HomeAreasActividad> {
 
     gridViewTiles = myPairs;
     Future.delayed(const Duration(seconds: 3), () {
-      // Here you can write your code
+  // Here you can write your code
       setState(() {
         print("2 segundos");
         // Here you can write your code for open new view
@@ -58,9 +59,9 @@ class _HomeState extends State<HomeAreasActividad> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          "$points/700",
+                          "$points/800",
                           style: TextStyle(
-                            fontSize: 40,
+                            fontSize: 20,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -68,7 +69,7 @@ class _HomeState extends State<HomeAreasActividad> {
                           "Puntaje",
                           textAlign: TextAlign.start,
                           style: TextStyle(
-                            fontSize: 30,
+                            fontSize: 14,
                             fontWeight: FontWeight.w300,
                           ),
                         ),
@@ -76,16 +77,16 @@ class _HomeState extends State<HomeAreasActividad> {
                     )
                   : Container(),
               SizedBox(
-                height: 10,
+                height: 40,
               ),
-              points != 600
+              points != 800
                   ? GridView(
                       shrinkWrap: true,
                       //physics: ClampingScrollPhysics(),
                       scrollDirection: Axis.vertical,
                       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                         mainAxisSpacing: 0.0,
-                        maxCrossAxisExtent: 150.0,
+                        maxCrossAxisExtent: 100.0,
                       ),
                       children: List.generate(
                         gridViewTiles.length,
@@ -108,22 +109,20 @@ class _HomeState extends State<HomeAreasActividad> {
                               reStart();
                             });
                           },
-                          child: Center(
-                            child: Container(
-                              height: 50,
-                              width: 200,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius: BorderRadius.circular(24),
-                              ),
-                              child: Text(
-                                "Repetir",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                          child: Container(
+                            height: 50,
+                            width: 200,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(24),
+                            ),
+                            child: Text(
+                              "Repetir",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ),
@@ -132,14 +131,7 @@ class _HomeState extends State<HomeAreasActividad> {
                           height: 20,
                         ),
                         GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Home(),
-                                ),
-                              );
-                          },
+                          onTap: () {},
                           child: Container(
                             height: 50,
                             width: 200,
@@ -149,7 +141,7 @@ class _HomeState extends State<HomeAreasActividad> {
                               borderRadius: BorderRadius.circular(24),
                             ),
                             child: Text(
-                              "Ir al menú",
+                              "Calificar",
                               style: TextStyle(
                                 color: Colors.blue,
                                 fontSize: 17,
@@ -191,11 +183,11 @@ class _TileState extends State<Tile> {
           if (selectedTile != "") {
             /// Se prueba si los don son iguales
             if (selectedTile == myPairs[widget.tileIndex].getImageAssetPath()) {
-              print("add point");
+              print("punto añadido");
               points = points + 100;
-              print(selectedTile + " thishis" + widget.imagePathUrl);
+              print(selectedTile + " esto es" + widget.imagePathUrl);
 
-              TileModelAreas tileModel = new TileModelAreas();
+              TileModelCarbono tileModel = new TileModelCarbono();
               print(widget.tileIndex);
               selected = true;
               Future.delayed(const Duration(seconds: 2), () {
@@ -241,15 +233,9 @@ class _TileState extends State<Tile> {
       child: Container(
         margin: EdgeInsets.all(5),
         child: myPairs[widget.tileIndex].getImageAssetPath() != ""
-            ? Image.asset(
-                myPairs[widget.tileIndex].getIsSelected()
-                    ? myPairs[widget.tileIndex].getImageAssetPath()
-                    : widget.imagePathUrl,
-                fit: BoxFit.cover,
-                scale: 10,
-                width: double.infinity,
-                height: double.infinity,
-              )
+            ? Image.asset(myPairs[widget.tileIndex].getIsSelected()
+                ? myPairs[widget.tileIndex].getImageAssetPath()
+                : widget.imagePathUrl)
             : Container(
                 color: Colors.white,
                 child: Image.asset(

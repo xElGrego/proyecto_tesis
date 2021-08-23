@@ -1,19 +1,17 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:proyecto_tesis/app/pages/areas_protegidas/areas_protegidas_model.dart';
 import 'package:proyecto_tesis/app/pages/home/newhome_page.dart';
+import 'package:proyecto_tesis/app/pages/planets/planets_model.dart';
 
-import 'data_areasprotegidas.dart';
+import 'data_planets.dart';
 
-class HomeAreasActividad extends StatefulWidget {
+class HomePlanetsActividad extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<HomeAreasActividad> {
-  List<TileModelAreas> gridViewTiles = [];
-  List<TileModelAreas> questionPairs = [];
+class _HomeState extends State<HomePlanetsActividad> {
+  List<TileModelPlanets> gridViewTiles = [];
+  List<TileModelPlanets> questionPairs = [];
 
   @override
   void initState() {
@@ -58,7 +56,7 @@ class _HomeState extends State<HomeAreasActividad> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          "$points/700",
+                          "$points/800",
                           style: TextStyle(
                             fontSize: 40,
                             fontWeight: FontWeight.w500,
@@ -76,16 +74,16 @@ class _HomeState extends State<HomeAreasActividad> {
                     )
                   : Container(),
               SizedBox(
-                height: 10,
+                height: 40,
               ),
-              points != 600
+              points != 800
                   ? GridView(
                       shrinkWrap: true,
                       //physics: ClampingScrollPhysics(),
                       scrollDirection: Axis.vertical,
                       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                        mainAxisSpacing: 0.0,
-                        maxCrossAxisExtent: 150.0,
+                        mainAxisSpacing: 5.0,
+                        maxCrossAxisExtent: 100.0,
                       ),
                       children: List.generate(
                         gridViewTiles.length,
@@ -100,15 +98,14 @@ class _HomeState extends State<HomeAreasActividad> {
                     )
                   : Container(
                       child: Column(
-                      children: <Widget>[
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              points = 0;
-                              reStart();
-                            });
-                          },
-                          child: Center(
+                        children: <Widget>[
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                points = 0;
+                                reStart();
+                              });
+                            },
                             child: Container(
                               height: 50,
                               width: 200,
@@ -127,39 +124,39 @@ class _HomeState extends State<HomeAreasActividad> {
                               ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
+                          SizedBox(
+                            height: 20,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => Home(),
                                 ),
                               );
-                          },
-                          child: Container(
-                            height: 50,
-                            width: 200,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.blue, width: 2),
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                            child: Text(
-                              "Ir al menú",
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontSize: 17,
-                                fontWeight: FontWeight.w500,
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 200,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.blue, width: 2),
+                                borderRadius: BorderRadius.circular(24),
+                              ),
+                              child: Text(
+                                "Ir al Menú",
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    ))
+                        ],
+                      ),
+                    ),
             ],
           ),
         ),
@@ -191,11 +188,11 @@ class _TileState extends State<Tile> {
           if (selectedTile != "") {
             /// Se prueba si los don son iguales
             if (selectedTile == myPairs[widget.tileIndex].getImageAssetPath()) {
-              print("add point");
+              print("punto añadido");
               points = points + 100;
-              print(selectedTile + " thishis" + widget.imagePathUrl);
+              print(selectedTile + " esto" + widget.imagePathUrl);
 
-              TileModelAreas tileModel = new TileModelAreas();
+              TileModelPlanets tileModel = new TileModelPlanets();
               print(widget.tileIndex);
               selected = true;
               Future.delayed(const Duration(seconds: 2), () {
@@ -241,15 +238,9 @@ class _TileState extends State<Tile> {
       child: Container(
         margin: EdgeInsets.all(5),
         child: myPairs[widget.tileIndex].getImageAssetPath() != ""
-            ? Image.asset(
-                myPairs[widget.tileIndex].getIsSelected()
-                    ? myPairs[widget.tileIndex].getImageAssetPath()
-                    : widget.imagePathUrl,
-                fit: BoxFit.cover,
-                scale: 10,
-                width: double.infinity,
-                height: double.infinity,
-              )
+            ? Image.asset(myPairs[widget.tileIndex].getIsSelected()
+                ? myPairs[widget.tileIndex].getImageAssetPath()
+                : widget.imagePathUrl)
             : Container(
                 color: Colors.white,
                 child: Image.asset(

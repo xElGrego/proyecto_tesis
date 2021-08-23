@@ -16,11 +16,9 @@ class CambioClimaticoDetails extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ///For image and back button and favorate button
                 Container(
                   child: Stack(
                     children: [
-                      ///Container for place quick info
                       Container(
                         width: double.infinity,
                         padding: EdgeInsets.only(
@@ -70,8 +68,6 @@ class CambioClimaticoDetails extends StatelessWidget {
                           ),
                         ),
                       ),
-
-                      ///Back button
                       Positioned(
                         top: 40,
                         left: 24,
@@ -87,7 +83,6 @@ class CambioClimaticoDetails extends StatelessWidget {
                         ),
                       ),
 
-                      ///Favorate icon
                       Positioned(
                         top: 300,
                         child: Container(

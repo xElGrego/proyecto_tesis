@@ -16,11 +16,9 @@ class CarbonoDetails extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ///For image and back button and favorate button
                 Container(
                   child: Stack(
                     children: [
-                      ///Container for place quick info
                       Container(
                         width: double.infinity,
                         padding: EdgeInsets.only(
@@ -129,7 +127,26 @@ class CarbonoDetails extends StatelessWidget {
                     ),
                   ),
                 ),
-                Spacer(),
+
+                if (index >= carbonoList.length - 1)
+                  Center(
+                    child: ElevatedButton(
+                      child: Text(
+                        'Ir a la actividad',
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                      onPressed: () {
+                        /* Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomeActividadCarbono(),
+                          ),
+                        ); */
+                      },
+                    ),
+                  ),
                 /* Container(
                   width: double.infinity,
                   padding: EdgeInsets.symmetric(horizontal: 32, vertical: 20),

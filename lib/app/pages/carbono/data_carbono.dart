@@ -1,21 +1,21 @@
 
 
-import 'package:proyecto_tesis/app/pages/planets/planets_model.dart';
 
-import 'areas_protegidas_model.dart';
+
+import 'carbono_model.dart';
 
 String selectedTile = "";
 int selectedIndex ;
 bool selected = true;
 int points = 0;
 
-List<TileModelAreas> myPairs = [];
+List<TileModelCarbono> myPairs = [];
 List<bool> clicked = [];
 
 List<bool> getClicked(){
 
   List<bool> yoClicked = [];
-  List<TileModelAreas> myairs = [];
+  List<TileModelCarbono> myairs = [];
   myairs = getPairs();
   for(int i=0;i<myairs.length;i++){
     yoClicked[i] = false;
@@ -24,132 +24,132 @@ List<bool> getClicked(){
   return yoClicked;
 }
 
-List<TileModelAreas>  getPairs(){
+List<TileModelCarbono>  getPairs(){
 
 
-  List<TileModelAreas> pairs = [];
+  List<TileModelCarbono> pairs = [];
 
-  TileModelAreas tileModel = new TileModelAreas();
+  TileModelCarbono tileModel = new TileModelCarbono();
 
   //1
-  tileModel.setImageAssetPath("assets/img/areas_protegidas/cotopaxi.jpg");
+  tileModel.setImageAssetPath("assets/img/carbono/carbono_aire.jpg");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModelAreas();
+  tileModel = new TileModelCarbono();
 
   //2
-  tileModel.setImageAssetPath("assets/img/areas_protegidas/elcajas.jpg");
+  tileModel.setImageAssetPath("assets/img/carbono/carbono_combustibles.jpg");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModelAreas();
+  tileModel = new TileModelCarbono();
 
   //3
-  tileModel.setImageAssetPath("assets/img/areas_protegidas/sangay.jpg");
+  tileModel.setImageAssetPath("assets/img/carbono/carbono_gasnatural.jpg");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModelAreas();
+  tileModel = new TileModelCarbono();
 
   //4
-  tileModel.setImageAssetPath("assets/img/areas_protegidas/sumaco.png");
+  tileModel.setImageAssetPath("assets/img/carbono/carbono_petroleo.jpg");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModelAreas();
+  tileModel = new TileModelCarbono();
   
   //5
-  tileModel.setImageAssetPath("assets/img/areas_protegidas/yacuri.jpg");
+  tileModel.setImageAssetPath("assets/img/planets/.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModelAreas();
+  tileModel = new TileModelCarbono();
 
   //6
-  tileModel.setImageAssetPath("assets/img/areas_protegidas/yasuni.jpg");
+  tileModel.setImageAssetPath("assets/img/planets/saturn.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModelAreas();
+  tileModel = new TileModelCarbono();
 
-/*   //7
+  //7
   tileModel.setImageAssetPath("assets/img/planets/uranus.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModel();
+  tileModel = new TileModelCarbono();
 
   //8
   tileModel.setImageAssetPath("assets/img/planets/venus.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModel(); */
+  tileModel = new TileModelCarbono();
 
   return pairs;
 }
 
-List<TileModelAreas>  getQuestionPairs(){
+List<TileModelCarbono>  getQuestionPairs(){
 
-  List<TileModelAreas> pairs = [];
+  List<TileModelCarbono> pairs = [];
 
-  TileModelAreas tileModel = new TileModelAreas();
+  TileModelCarbono tileModel = new TileModelCarbono();
 
   //1
   tileModel.setImageAssetPath("assets/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModelAreas();
+  tileModel = new TileModelCarbono();
 
   //2
   tileModel.setImageAssetPath("assets/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModelAreas();
+  tileModel = new TileModelCarbono();
 
   //3
   tileModel.setImageAssetPath("assets/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModelAreas();
+  tileModel = new TileModelCarbono();
 
   //4
   tileModel.setImageAssetPath("assets/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModelAreas();
+  tileModel = new TileModelCarbono();
   //5
   tileModel.setImageAssetPath("assets/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModelAreas();
+  tileModel = new TileModelCarbono();
 
   //6
   tileModel.setImageAssetPath("assets/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  tileModel = new TileModelAreas();
+  tileModel = new TileModelCarbono();
 
- /*  //7
+  //7
   tileModel.setImageAssetPath("assets/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  TileModelAreas = new TileModelAreas();
+  tileModel = new TileModelCarbono();
 
   //8
   tileModel.setImageAssetPath("assets/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
-  TileModelAreas = new TileModelAreas(); */
+  tileModel = new TileModelCarbono();
 
   return pairs;
 }
