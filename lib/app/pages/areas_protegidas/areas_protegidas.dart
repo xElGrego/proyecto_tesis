@@ -41,7 +41,7 @@ class AreasProtegidasDetails extends StatelessWidget {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            constraints: BoxConstraints(minWidth: 10, maxWidth: 50),
+                            constraints: BoxConstraints(minWidth: 10, maxWidth: 50,),
                             child: Icon(
                               Icons.chevron_left,
                               color: AppColors.black,

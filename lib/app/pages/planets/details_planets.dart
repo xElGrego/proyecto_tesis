@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_tesis/app/pages/areas_protegidas/areas_protegidas_actividad..dart';
 import 'package:proyecto_tesis/app/pages/zone_3d/planets/model_planet.dart';
 import 'package:proyecto_tesis/data/planetas.dart';
 
@@ -60,23 +61,45 @@ class DetailsPlanets extends StatelessWidget {
                                     ),
                                   ),
                                   Divider(color: Colors.black38),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => Planets3D(
-                                            planetinfo: planetsList[index],
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => Planets3D(
+                                                planetinfo: planetsList[index],
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                        child: Text(
+                                          "Ver objecto 3d",
+                                          style: TextStyle(
+                                            fontSize: 16,
                                           ),
                                         ),
-                                      );
-                                    },
-                                    child: Text(
-                                      "Ver objecto 3d",
-                                      style: TextStyle(
-                                        fontSize: 16,
                                       ),
-                                    ),
+                                      if (index >= planetsList.length - 1)
+                                        ElevatedButton(
+                                          child: Text(
+                                            'Ir a la actividad',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                            ),
+                                          ),
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => HomeAreasActividad(),
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                    ],
                                   ),
                                 ],
                               ),

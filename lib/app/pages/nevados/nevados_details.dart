@@ -33,6 +33,18 @@ class NevadosDetails extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        if (index >= nevadosList.length - 1)
+                          ElevatedButton(
+                            child: Text('Ir a la actividad'),
+                            onPressed: () {
+                             /*  Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => WidgetActividad(),
+                                ),
+                              ); */
+                            },
+                          ),
                         Flexible(
                           flex: 3,
                           fit: FlexFit.loose,
@@ -60,7 +72,7 @@ class NevadosDetails extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 25.0),
+                    padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 25.0),
                     transform: Matrix4.translationValues(0, -30, 0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
@@ -84,7 +96,7 @@ class NevadosDetails extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: SizeConfig.blockSizeVertical * 3.5,
+                          height: SizeConfig.blockSizeVertical * 1.5,
                         ),
                         PrimaryText(
                           text: nevadosList[index].title,
@@ -94,14 +106,14 @@ class NevadosDetails extends StatelessWidget {
                         SizedBox(
                           height: SizeConfig.blockSizeVertical * 2.5,
                         ),
-                        SizedBox(
-                          height: SizeConfig.blockSizeVertical * 2,
-                        ),
-                        PrimaryText(
-                          text: nevadosList[index].concept,
-                          size: 17,
-                          color: Colors.grey[500],
-                          fontWeight: FontWeight.w500,
+                        Container(
+                          height: SizeConfig.blockSizeVertical * 22,
+                          child: PrimaryText(
+                            text: nevadosList[index].concept,
+                            size: 17,
+                            color: Colors.grey[500],
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ],
                     ),
