@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_tesis/app/pages/areas_protegidas/areas_protegidas_actividad..dart';
 import 'package:proyecto_tesis/app/pages/planets/planets_actividad.dart';
 import 'package:proyecto_tesis/app/pages/zone_3d/planets/model_planet.dart';
 import 'package:proyecto_tesis/data/planetas.dart';

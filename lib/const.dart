@@ -6,6 +6,8 @@ import 'app/pages/bacterias/details_bacterias_nutricion.dart';
 import 'app/pages/cambio_climatico/cambio_climatico.dart';
 import 'app/pages/carbono/carbono_details.dart';
 import 'app/pages/contaminacion_agua/contaminacion_agua.dart';
+import 'app/pages/corrientes_marinas/corrientes_marinas_details.dart';
+import 'app/pages/impacto_humano/impacto_humano.details.dart';
 import 'app/pages/nevados/nevados_details.dart';
 import 'app/pages/planets/details_planets.dart';
 import 'app/pages/tejidos/details_tejidos_animals.dart';
@@ -64,7 +66,7 @@ final temas = [
     "label": 'Nevados del Ecuador',
     "arrayMappedname": nevados
   },
-/* 
+ 
   {
     "label": 'Impacto Humano',
     "arrayMappedname": impactoHumano
@@ -73,7 +75,7 @@ final temas = [
   {
     "label": 'Corrientes Marinas',
     "arrayMappedname": corrientesMarinas
-  }, */
+  }, 
 ];
 
 List<Map<String, Object>> planetas = [
@@ -167,10 +169,10 @@ List<Map<String, Object>> nevados = [
  },
 ];
 
-/* List<Map<String, Object>> impactoHumano = [
+ List<Map<String, Object>> impactoHumano = [
  {
    "category": "",
-   "label": "Impaco Humano",
+   "label": "Impacto Humano",
    "image": "assets/img/nevados/nevados_home.jfif",
    "widget": ImpactoHumanoDetails(),
  },
@@ -179,8 +181,8 @@ List<Map<String, Object>> nevados = [
 List<Map<String, Object>> corrientesMarinas = [
  {
    "category": "",
-   "label": "Impaco Humano",
+   "label": "Corrientes Marinas",
    "image": "assets/img/nevados/nevados_home.jfif",
    "widget": CorrientesMarinasDetails(),
  },
-]; */
+]; 

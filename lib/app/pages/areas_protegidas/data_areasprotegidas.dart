@@ -1,6 +1,5 @@
 
 
-import 'package:proyecto_tesis/app/pages/planets/planets_model.dart';
 
 import 'areas_protegidas_model.dart';
 
