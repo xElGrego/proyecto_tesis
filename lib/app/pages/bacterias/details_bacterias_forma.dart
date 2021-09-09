@@ -4,6 +4,7 @@ import 'package:proyecto_tesis/config/config.dart';
 import 'package:proyecto_tesis/data/bacterias_forma.dart';
 
 import '../../colors.dart';
+import 'actividad_bacterias_forma.dart';
 
 class BacteriaFormaDetail extends StatelessWidget {
   @override
@@ -103,6 +104,24 @@ class BacteriaFormaDetail extends StatelessWidget {
                           color: Colors.grey[500],
                           fontWeight: FontWeight.w500,
                         ),
+                        Spacer(),
+                        if (index >= bacteriaFormaList.length - 1)
+                                        ElevatedButton(
+                                          child: Text(
+                                            'Ir a la actividad',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                            ),
+                                          ),
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => ActividadBacteriasForma(),
+                                              ),
+                                            );
+                                          },
+                                        ),
                       ],
                     ),
                   ),

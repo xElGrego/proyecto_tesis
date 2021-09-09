@@ -23,9 +23,11 @@ environment:
 dependencies:
   flutter_swiper :
   flutter_cube: ^0.0.6 
-  provider:
   flutter_layout_grid: ^0.10.1
   google_fonts: ^1.1.0
+  font_awesome_flutter: ^8.8.1
+
+  
 
 
 
