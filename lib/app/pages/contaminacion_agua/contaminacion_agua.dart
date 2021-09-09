@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_tesis/app/widgets/text.dart';
 import 'package:proyecto_tesis/config/config.dart';
-import 'package:proyecto_tesis/data/cambio_climatico.dart';
+import 'package:proyecto_tesis/data/contaminacion_agua.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'dart:async';
+import 'package:url_launcher/link.dart';
 
 import '../../colors.dart';
 
@@ -9,7 +12,7 @@ class ContaminacionAguaDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-      itemCount: cambioclimaticoList.length,
+      itemCount: contaminacionAguaList.length,
       itemBuilder: (context, index) {
         return Scaffold(
           backgroundColor: AppColors.white,
@@ -24,7 +27,7 @@ class ContaminacionAguaDetails extends StatelessWidget {
                   width: SizeConfig.screenWidth,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(cambioclimaticoList[index].image),
+                      image: AssetImage(contaminacionAguaList[index].image),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -84,36 +87,61 @@ class ContaminacionAguaDetails extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: SizeConfig.blockSizeVertical * 3.5,
+                          height: SizeConfig.blockSizeVertical * 1.5,
                         ),
                         PrimaryText(
-                          text: cambioclimaticoList[index].title,
+                          text: contaminacionAguaList[index].title,
                           size: 26,
                           fontWeight: FontWeight.w700,
                         ),
                         SizedBox(
-                          height: SizeConfig.blockSizeVertical * 2.5,
-                        ),
-                        SizedBox(
-                          height: SizeConfig.blockSizeVertical * 2,
+                          height: SizeConfig.blockSizeVertical * 2.0,
                         ),
                         PrimaryText(
-                          text: cambioclimaticoList[index].concept,
+                          text: contaminacionAguaList[index].concept,
                           size: 17,
                           color: Colors.grey[500],
                           fontWeight: FontWeight.w500,
                         ),
-                        if (index >= cambioclimaticoList.length - 1)
-                          ElevatedButton(
-                            child: Text(
-                              'Ir a la actividad',
-                              style: TextStyle(
-                                fontSize: 16,
+                        Spacer(),
+                        if (index >= contaminacionAguaList.length - 1)
+                          Row(
+                            children: [
+                              ElevatedButton(
+                                child: Text(
+                                  'Ir a la actividad',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  const url =
+                                      'https://es.educaplay.com/juego/10224482-contaminacion_del_agua.html';
+                                  if (await canLaunch(url) != null) {
+                                    await launch(url);
+                                  } else {
+                                    throw {print("Valimos")};
+                                  }
+                                },
                               ),
-                            ),
-                            onPressed: () {
-                             
-                            },
+                              Spacer(),
+                              ElevatedButton(
+                                child: Text(
+                                  'Video',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  const url = 'https://www.youtube.com/watch?v=XMvncTxCLB4';
+                                  if (await canLaunch(url) != null) {
+                                    await launch(url);
+                                  } else {
+                                    throw {print("Valimos")};
+                                  }
+                                },
+                              ),
+                            ],
                           ),
                       ],
                     ),

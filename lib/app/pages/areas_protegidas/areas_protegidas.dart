@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_tesis/app/widgets/text.dart';
 import 'package:proyecto_tesis/config/config.dart';
 import 'package:proyecto_tesis/data/areas_protegidas.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../colors.dart';
 import 'areas_protegidas_actividad..dart';
@@ -26,7 +27,7 @@ class AreasProtegidasDetails extends StatelessWidget {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(areasprotegidasList[index].image),
-                      fit: BoxFit.contain,
+                      fit: BoxFit.cover,
                     ),
                   ),
                   child: Padding(
@@ -42,10 +43,7 @@ class AreasProtegidasDetails extends StatelessWidget {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            constraints: BoxConstraints(
-                              minWidth: 10,
-                              maxWidth: 50,
-                            ),
+                            constraints: BoxConstraints(minWidth: 10, maxWidth: 50),
                             child: Icon(
                               Icons.chevron_left,
                               color: AppColors.black,
@@ -64,7 +62,7 @@ class AreasProtegidasDetails extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 25.0),
+                    padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 25.0),
                     transform: Matrix4.translationValues(0, -30, 0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
@@ -95,48 +93,62 @@ class AreasProtegidasDetails extends StatelessWidget {
                           size: 26,
                           fontWeight: FontWeight.w700,
                         ),
-
                         SizedBox(
-                          height: SizeConfig.blockSizeVertical * 2,
+                          height: SizeConfig.blockSizeVertical * 1.0,
                         ),
-                        PrimaryText(
-                          text: areasprotegidasList[index].concept,
-                          size: 17,
-                          color: Colors.grey[500],
-                          fontWeight: FontWeight.w700,
+                        Container(
+                          height: SizeConfig.blockSizeVertical * 22,
+                          child: PrimaryText(
+                            text: areasprotegidasList[index].concept,
+                            size: 17,
+                            color: Colors.grey[500],
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                        SizedBox(
-                          height: SizeConfig.blockSizeVertical * 2,
-                        ),
-                        
+                        Spacer(),
                         if (index >= areasprotegidasList.length - 1)
-                                        ElevatedButton(
-                                          child: Text(
-                                            'Ir a la actividad',
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                            ),
-                                          ),
-                                          onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) => HomeAreasActividad(),
-                                              ),
-                                            );
-                                          },
-                                        ),
-                    
+                          Row(
+                            children: [
+                              ElevatedButton(
+                                child: Text(
+                                  'Ir a la actividad',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => HomeAreasActividad(),
+                                    ),
+                                  );
+                                },
+                              ),
+                              Spacer(),
+                              ElevatedButton(
+                                child: Text(
+                                  'Video',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  const url = 'https://www.youtube.com/watch?v=GmPDdNIuX-w';
+                                  if (await canLaunch(url) != null) {
+                                    await launch(url);
+                                  } else {
+                                    throw {print("Valimos")};
+                                  }
+                                },
+                              ),
+                            ],
+                          ),
                       ],
-                      
-                      
                     ),
-                    
                   ),
-                  
                 ),
               ],
-              
             ),
           ),
         );

@@ -26,14 +26,14 @@ List<CambioClimaticoInfo> cambioclimaticoList = [
    
     title: 'El calentamiento de la atmósfera',
     concept:
-        "Entre la atmósfera, la litósfera y la hidrósfera ocurre el movimiento de energía y nutrientes a través de los ciclos biogeoquímicos, entre los que se encuentran el ciclo del carbono, del nitrógeno, del azufre, del fósforo, entre otros. Este movimiento de nutrientes ocurre de forma recíproca desde los elementos bióticos hasta los abióticos de un ecosistema",
+        "Entre la atmósfera, la litósfera y la hidrósfera ocurre el movimiento de energía y nutrientes a través de los ciclos biogeoquímicos, entre los que se encuentran el ciclo del carbono, del nitrógeno, del azufre, del fósforo, entre otros. Este movimiento de nutrientes ocurre de forma recíproca.",
     image: "assets/img/cambio_climatico/calentamiento_atmosfera.jpg",
   ),
    CambioClimaticoInfo(
    
     title: 'Los glaciares',
     concept:
-        "Más del 2 % del agua existente en la Tierra se encuentra en forma de hielo. Los glaciares son grandes acumulaciones de hielo que cubren los polos del planeta y las zonas altas de las montañas, y constituyen una gran reserva de agua dulce. Los glaciares se forman sobre las nieves perpetuas. La nieve cae sobre la altitud límite y se dispone en estratos; con el paso de los años la nieve más profunda se hace más compacta.",
+        "Más del 2 % del agua existente en la Tierra se encuentra en forma de hielo. Los glaciares son grandes acumulaciones de hielo que cubren los polos del planeta y las zonas altas de las montañas, y constituyen una gran reserva de agua dulce. Los glaciares se forman sobre las nieves perpetuas.",
     image: "assets/img/cambio_climatico/glaciares.jpg",
   ),
   

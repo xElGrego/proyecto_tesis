@@ -63,7 +63,7 @@ final temas = [
   },
 
   {
-    "label": 'Nevados del Ecuador',
+    "label": 'Volcanes del Ecuador',
     "arrayMappedname": nevados
   },
  
@@ -173,7 +173,7 @@ List<Map<String, Object>> nevados = [
  {
    "category": "",
    "label": "Impacto Humano",
-   "image": "assets/img/nevados/nevados_home.jfif",
+   "image": "assets/img/impacto_humano/impaco_humano_home.jpg",
    "widget": ImpactoHumanoDetails(),
  },
 ];
@@ -182,7 +182,7 @@ List<Map<String, Object>> corrientesMarinas = [
  {
    "category": "",
    "label": "Corrientes Marinas",
-   "image": "assets/img/nevados/nevados_home.jfif",
+   "image": "assets/img/corrientes_marinas/home.jfif",
    "widget": CorrientesMarinasDetails(),
  },
 ]; 

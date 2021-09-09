@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:proyecto_tesis/app/widgets/text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../config/config.dart';
 import '../../../const.dart';
@@ -79,7 +80,6 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-
           Container(
             height: SizeConfig.blockSizeVertical * 32,
             child: Padding(
@@ -99,6 +99,23 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(primary: AppColors.primary),
+            onPressed: () async {
+              const url = 'https://ugye-my.sharepoint.com/:b:/g/personal/bella_figueroas_ug_edu_ec/EfnvL70qLlxGhAE7MxsU_5kBEGhegKcMJJ26NAHlpdh_hQ';
+              if (await canLaunch(url) != null) {
+                await launch(url);
+              } else {
+                throw {print("Valimos")};
+              }
+            },
+            child: Text(
+              "Recursos",
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+          )
         ],
       ),
     );
@@ -115,7 +132,7 @@ class _HomeState extends State<Home> {
         );
       },
       child: Padding(
-        padding: const EdgeInsets.only(right : 18.0),
+        padding: const EdgeInsets.only(right: 18.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

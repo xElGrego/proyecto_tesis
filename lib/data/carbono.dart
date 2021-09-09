@@ -19,8 +19,7 @@ List<Carbono> carbonoList = [
     title: 'El carbono en los combustibles ',
     image: "assets/img/carbono/carbono_combustibles.jpg",
     concept:
-        "El carbono es el elemento fundamental presente en los combustibles fósiles como carbón de piedra, petróleo y gas natural. El carbón de piedra o hulla es un combustible sólido de origen vegetal, es una roca sedimentaria de color negro que generalmente contiene otros minerales como impurezas. La presencia de azufre es el principal problema, pues al combustionarse contamina el aire por la formación de óxido de azufre.",
-    
+        "El carbono es el elemento fundamental presente en los combustibles fósiles como carbón de piedra, petróleo y gas natural. El carbón de piedra o hulla es un combustible sólido de origen vegetal, es una roca sedimentaria de color negro que generalmente contiene otros minerales como impurezas",    
   ),
  Carbono(
    

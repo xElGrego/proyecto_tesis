@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:proyecto_tesis/data/cambio_climatico.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../colors.dart';
 
@@ -82,7 +83,6 @@ class CambioClimaticoDetails extends StatelessWidget {
                           },
                         ),
                       ),
-
                       Positioned(
                         top: 300,
                         child: Container(
@@ -109,7 +109,6 @@ class CambioClimaticoDetails extends StatelessWidget {
                     ],
                   ),
                 ),
-
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 32,
@@ -124,6 +123,26 @@ class CambioClimaticoDetails extends StatelessWidget {
                     ),
                   ),
                 ),
+                if (index >= cambioclimaticoList.length - 1)
+                  Center(
+                    child: ElevatedButton(
+                      child: Text(
+                        'Video',
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                      onPressed: () async {
+                        const url =
+                            'https://www.youtube.com/watch?v=kcr-Ryq6Nrk';
+                        if (await canLaunch(url) != null) {
+                          await launch(url);
+                        } else {
+                          throw {print("Valimos")};
+                        }
+                      },
+                    ),
+                  ),
                 Spacer(),
                 /* Container(
                   width: double.infinity,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_tesis/app/widgets/text.dart';
 import 'package:proyecto_tesis/config/config.dart';
 import 'package:proyecto_tesis/data/tejidos_animales.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../colors.dart';
 
@@ -86,10 +87,32 @@ class TejidosAnimalsDetails extends StatelessWidget {
                         SizedBox(
                           height: SizeConfig.blockSizeVertical * 3.5,
                         ),
-                        PrimaryText(
-                          text: tejidosAnimalsList[index].title,
-                          size: 26,
-                          fontWeight: FontWeight.w700,
+                        Row(
+                          children: [
+                            PrimaryText(
+                              text: tejidosAnimalsList[index].title,
+                              size: 26,
+                              fontWeight: FontWeight.w700,
+                            ),
+                            Spacer(),
+                            if (index >= tejidosAnimalsList.length - 1)
+                              ElevatedButton(
+                                child: Text(
+                                  'Video',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  const url = 'https://www.youtube.com/watch?v=_U9BQkzMayQ';
+                                  if (await canLaunch(url) != null) {
+                                    await launch(url);
+                                  } else {
+                                    throw {print("Valimos")};
+                                  }
+                                },
+                              ),
+                          ],
                         ),
                         SizedBox(
                           height: SizeConfig.blockSizeVertical * 2.5,

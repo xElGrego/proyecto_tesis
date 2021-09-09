@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_tesis/app/widgets/text.dart';
 import 'package:proyecto_tesis/config/config.dart';
 import 'package:proyecto_tesis/data/bacterias_nutricion.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../colors.dart';
 
@@ -84,7 +85,7 @@ class BacteriaNutricionDetail extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: SizeConfig.blockSizeVertical * 3.5,
+                          height: SizeConfig.blockSizeVertical * 1,
                         ),
                         PrimaryText(
                           text: bacteriaNutricionList[index].title,
@@ -92,17 +93,33 @@ class BacteriaNutricionDetail extends StatelessWidget {
                           fontWeight: FontWeight.w700,
                         ),
                         SizedBox(
-                          height: SizeConfig.blockSizeVertical * 2.5,
+                          height: SizeConfig.blockSizeVertical * 1.5,
                         ),
-                        SizedBox(
-                          height: SizeConfig.blockSizeVertical * 2,
-                        ),
+
                         PrimaryText(
                           text: bacteriaNutricionList[index].concept,
                           size: 17,
                           color: Colors.grey[500],
                           fontWeight: FontWeight.w500,
                         ),
+                        Spacer(),
+                        if (index >= bacteriaNutricionList.length - 1)
+                          ElevatedButton(
+                            child: Text(
+                              'Video',
+                              style: TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            onPressed: () async {
+                              const url = 'https://www.youtube.com/watch?v=NYMM5_LWx6g';
+                              if (await canLaunch(url) != null) {
+                                await launch(url);
+                              } else {
+                                throw {print("Valimos")};
+                              }
+                            },
+                          ),
                       ],
                     ),
                   ),

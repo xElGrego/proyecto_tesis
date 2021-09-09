@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:proyecto_tesis/data/carbono.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'dart:async';
 
 import '../../colors.dart';
 
@@ -47,8 +49,6 @@ class CarbonoDetails extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(height: 8),
-                      SizedBox(height: 18),
                       Container(
                         child: Hero(
                           tag: carbonoList[index].image,
@@ -68,8 +68,6 @@ class CarbonoDetails extends StatelessWidget {
                           ),
                         ),
                       ),
-
-                      ///Back button
                       Positioned(
                         top: 40,
                         left: 24,
@@ -84,69 +82,42 @@ class CarbonoDetails extends StatelessWidget {
                           },
                         ),
                       ),
-
-                      ///Favorate icon
-                      Positioned(
-                        top: 300,
-                        child: Container(
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey[100],
-                                blurRadius: 8,
-                              ),
-                            ],
-                          ),
-                          child: Icon(
-                            Icons.info,
-                            color: Colors.grey,
-                            size: 30,
-                          ),
-                        ),
-                        right: 34,
-                        bottom: 80,
-                      ),
                     ],
                   ),
                 ),
-
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 32,
-                    vertical: 16,
+                    vertical: 15,
                   ),
                   child: Text(
                     carbonoList[index].concept,
                     style: GoogleFonts.poppins(
                       color: AppColors.textGray,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
                     ),
                   ),
                 ),
-
                 if (index >= carbonoList.length - 1)
                   Center(
                     child: ElevatedButton(
                       child: Text(
-                        'Ir a la actividad',
+                        'Video',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 18,
                         ),
                       ),
-                      onPressed: () {
-                        /* Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => HomeActividadCarbono(),
-                          ),
-                        ); */
+                      onPressed: () async {
+                        const url = 'https://www.youtube.com/watch?v=XI7plCTNG74';
+                        if (await canLaunch(url) != null) {
+                          await launch(url);
+                        } else {
+                          throw {print("Valimos")};
+                        }
                       },
                     ),
                   ),
+                Spacer(),
                 /* Container(
                   width: double.infinity,
                   padding: EdgeInsets.symmetric(horizontal: 32, vertical: 20),
@@ -165,4 +136,6 @@ class CarbonoDetails extends StatelessWidget {
       },
     );
   }
+
+  canLaunch(String url) {}
 }

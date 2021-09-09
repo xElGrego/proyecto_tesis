@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_tesis/app/widgets/text.dart';
 import 'package:proyecto_tesis/config/config.dart';
 import 'package:proyecto_tesis/data/corrientes_marinas.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../colors.dart';
 
@@ -33,18 +34,7 @@ class CorrientesMarinasDetails extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        if (index >= corrientesMarinasList.length - 1)
-                          ElevatedButton(
-                            child: Text('Ir a la actividad'),
-                            onPressed: () {
-                             /*  Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => WidgetActividad(),
-                                ),
-                              ); */
-                            },
-                          ),
+      
                         Flexible(
                           flex: 3,
                           fit: FlexFit.loose,
@@ -104,7 +94,7 @@ class CorrientesMarinasDetails extends StatelessWidget {
                           fontWeight: FontWeight.w700,
                         ),
                         SizedBox(
-                          height: SizeConfig.blockSizeVertical * 2.5,
+                          height: SizeConfig.blockSizeVertical * 1.5,
                         ),
                         Container(
                           height: SizeConfig.blockSizeVertical * 22,
@@ -115,6 +105,26 @@ class CorrientesMarinasDetails extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
+                        Spacer(),
+                         if (index >= corrientesMarinasList.length - 1)
+                          Center(
+                            child: ElevatedButton(
+                              child: Text(
+                                'Video',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                              onPressed: () async {
+                                const url = 'https://www.youtube.com/watch?v=YmclTIrD5Zs';
+                                if (await canLaunch(url) != null) {
+                                  await launch(url);
+                                } else {
+                                  throw {print("Valimos")};
+                                }
+                              },
+                            ),
+                          ),
                       ],
                     ),
                   ),

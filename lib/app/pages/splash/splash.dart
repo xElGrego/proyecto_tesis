@@ -28,12 +28,14 @@ class _SplashState extends State<Splash> {
       body: SafeArea(
         child: Column(
           children: [
-            Spacer(),
             Center(
-          //Crea un widget el tamaño del hijo es la mitad de la fraccion del total espacio disponible
+              //Crea un widget el tamaño del hijo es la mitad de la fraccion del total espacio disponible
               child: FractionallySizedBox(
-                widthFactor: .6,
-                child: FlutterLogo(size: 400),
+                widthFactor: .8,
+                child: Image.asset(
+                  'assets/logo.jfif',
+                  height: 460,
+                ),
               ),
             ),
             Text(
@@ -42,7 +44,7 @@ class _SplashState extends State<Splash> {
                 fontSize: 30,
               ),
             ),
-             Spacer(),
+            Spacer(),
             Text(
               "Andrea Xiomara Calderón Ronquillo",
               style: TextStyle(

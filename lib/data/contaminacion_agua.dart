@@ -19,7 +19,7 @@ List<ContaminacionAgua> contaminacionAguaList = [
     title: 'El ciclo de autodepuración del agua',
     image: "assets/img/contaminacion/agua.jpg",
     concept:
-        "El agua dispone de sistemas de limpieza, que se llevan a cabo mediante el ciclo de autodepuración. Algunos de los mecanismos que intervienen son:  Los restos de los seres vivos sirven de alimento a algunos animales o se descomponen por la acción de bacterias y hongos. Este proceso se denomina biodegradación. Los productos que resultan de la acción de los descomponedores son utilizados por las plantas como nutrientes.",
+        "El agua dispone de sistemas de limpieza, que se llevan a cabo mediante el ciclo de autodepuración. Algunos de los mecanismos que intervienen son:  Los restos de los seres vivos sirven de alimento a algunos animales o se descomponen por la acción de bacterias y hongos. Este proceso se denomina biodegradación.",
     
   ),
  ContaminacionAgua(
