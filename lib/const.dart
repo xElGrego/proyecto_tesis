@@ -163,8 +163,8 @@ List<Map<String, Object>> cambioClimatico = [
 List<Map<String, Object>> nevados = [
  {
    "category": "",
-   "label": "Nevados del Ecuador",
-   "image": "assets/img/nevados/nevados_home.jfif",
+   "label": "Volcanes del Ecuador",
+   "image": "assets/img/nevados/volanes_home.jpg",
    "widget": NevadosDetails(),
  },
 ];

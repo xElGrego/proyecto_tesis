@@ -106,22 +106,22 @@ class BacteriaFormaDetail extends StatelessWidget {
                         ),
                         Spacer(),
                         if (index >= bacteriaFormaList.length - 1)
-                                        ElevatedButton(
-                                          child: Text(
-                                            'Ir a la actividad',
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                            ),
-                                          ),
-                                          onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) => ActividadBacteriasForma(),
-                                              ),
-                                            );
-                                          },
-                                        ),
+                          ElevatedButton(
+                            child: Text(
+                              'Ir a la actividad',
+                              style: TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ActividadBacteriasForma(),
+                                ),
+                              );
+                            },
+                          ),
                       ],
                     ),
                   ),

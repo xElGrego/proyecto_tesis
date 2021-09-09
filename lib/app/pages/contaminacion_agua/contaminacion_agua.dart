@@ -103,6 +103,18 @@ class ContaminacionAguaDetails extends StatelessWidget {
                           color: Colors.grey[500],
                           fontWeight: FontWeight.w500,
                         ),
+                        if (index >= cambioclimaticoList.length - 1)
+                          ElevatedButton(
+                            child: Text(
+                              'Ir a la actividad',
+                              style: TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
+                            onPressed: () {
+                             
+                            },
+                          ),
                       ],
                     ),
                   ),
