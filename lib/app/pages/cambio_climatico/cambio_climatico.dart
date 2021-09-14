@@ -124,24 +124,60 @@ class CambioClimaticoDetails extends StatelessWidget {
                   ),
                 ),
                 if (index >= cambioclimaticoList.length - 1)
-                  Center(
-                    child: ElevatedButton(
-                      child: Text(
-                        'Video',
-                        style: TextStyle(
-                          fontSize: 16,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton(
+                        child: Text(
+                          'Video',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
                         ),
+                        onPressed: () async {
+                          const url = 'https://www.youtube.com/watch?v=kcr-Ryq6Nrk';
+                          if (await canLaunch(url) != null) {
+                            await launch(url);
+                          } else {
+                            throw {print("Valimos")};
+                          }
+                        },
                       ),
-                      onPressed: () async {
-                        const url =
-                            'https://www.youtube.com/watch?v=kcr-Ryq6Nrk';
-                        if (await canLaunch(url) != null) {
-                          await launch(url);
-                        } else {
-                          throw {print("Valimos")};
-                        }
-                      },
-                    ),
+                      ElevatedButton(
+                        child: Text(
+                          'Actividad 1',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        onPressed: () async {
+                          const url =
+                              'https://es.educaplay.com/juego/10264877-el_cambio_climatico.html';
+                          if (await canLaunch(url) != null) {
+                            await launch(url);
+                          } else {
+                            throw {print("Valimos")};
+                          }
+                        },
+                      ),
+                      ElevatedButton(
+                        child: Text(
+                          'Actividad 2',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        onPressed: () async {
+                          const url =
+                              'https://es.educaplay.com/juego/10253100-el_cambio_climatico.html';
+                          if (await canLaunch(url) != null) {
+                            await launch(url);
+                          } else {
+                            throw {print("Valimos")};
+                          }
+                        },
+                      ),
+                    ],
                   ),
                 Spacer(),
                 /* Container(

@@ -108,10 +108,11 @@ class AreasProtegidasDetails extends StatelessWidget {
                         Spacer(),
                         if (index >= areasprotegidasList.length - 1)
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               ElevatedButton(
                                 child: Text(
-                                  'Ir a la actividad',
+                                  'Actividad 1',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),
@@ -125,7 +126,23 @@ class AreasProtegidasDetails extends StatelessWidget {
                                   );
                                 },
                               ),
-                              Spacer(),
+                              ElevatedButton(
+                                child: Text(
+                                  'Actividad 2',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  const url =
+                                      'https://es.educaplay.com/juego/10264857-areas_protegidas.html';
+                                  if (await canLaunch(url) != null) {
+                                    await launch(url);
+                                  } else {
+                                    throw {print("Valimos")};
+                                  }
+                                },
+                              ),
                               ElevatedButton(
                                 child: Text(
                                   'Video',

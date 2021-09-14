@@ -61,7 +61,7 @@ class TejidosAnimalsDetails extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 25.0),
+                    padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 25.0),
                     transform: Matrix4.translationValues(0, -30, 0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
@@ -83,9 +83,6 @@ class TejidosAnimalsDetails extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: SizeConfig.blockSizeVertical * 3.5,
                         ),
                         Row(
                           children: [
@@ -115,9 +112,6 @@ class TejidosAnimalsDetails extends StatelessWidget {
                           ],
                         ),
                         SizedBox(
-                          height: SizeConfig.blockSizeVertical * 2.5,
-                        ),
-                        SizedBox(
                           height: SizeConfig.blockSizeVertical * 2,
                         ),
                         PrimaryText(
@@ -126,6 +120,47 @@ class TejidosAnimalsDetails extends StatelessWidget {
                           color: Colors.grey[500],
                           fontWeight: FontWeight.w500,
                         ),
+                        Spacer(),
+                        if (index >= tejidosAnimalsList.length - 1)
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              ElevatedButton(
+                                child: Text(
+                                  'Actividad 1',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  const url =
+                                      'https://es.educaplay.com/juego/10264613-tejidos.html';
+                                  if (await canLaunch(url) != null) {
+                                    await launch(url);
+                                  } else {
+                                    throw {print("Valimos")};
+                                  }
+                                },
+                              ),
+                              ElevatedButton(
+                                child: Text(
+                                  'Actividad 2',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  const url =
+                                      'https://es.educaplay.com/juego/10253226-tejidos.html';
+                                  if (await canLaunch(url) != null) {
+                                    await launch(url);
+                                  } else {
+                                    throw {print("Valimos")};
+                                  }
+                                },
+                              ),
+                            ],
+                          ),
                       ],
                     ),
                   ),

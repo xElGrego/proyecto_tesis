@@ -58,7 +58,7 @@ class _HomeState extends State<HomeAreasActividad> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          "$points/700",
+                          "$points/600",
                           style: TextStyle(
                             fontSize: 40,
                             fontWeight: FontWeight.w500,

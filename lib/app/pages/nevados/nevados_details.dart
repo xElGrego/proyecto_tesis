@@ -106,23 +106,60 @@ class NevadosDetails extends StatelessWidget {
                         ),
                         Spacer(),
                         if (index >= nevadosList.length - 1)
-                          Center(
-                            child: ElevatedButton(
-                              child: Text(
-                                'Video',
-                                style: TextStyle(
-                                  fontSize: 18,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              ElevatedButton(
+                                child: Text(
+                                  'Video',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                  ),
                                 ),
+                                onPressed: () async {
+                                  const url = 'https://www.youtube.com/watch?v=OFcAmBOB_eU';
+                                  if (await canLaunch(url) != null) {
+                                    await launch(url);
+                                  } else {
+                                    throw {print("Valimos")};
+                                  }
+                                },
                               ),
-                              onPressed: () async {
-                                const url = 'https://www.youtube.com/watch?v=OFcAmBOB_eU';
-                                if (await canLaunch(url) != null) {
-                                  await launch(url);
-                                } else {
-                                  throw {print("Valimos")};
-                                }
-                              },
-                            ),
+                              ElevatedButton(
+                                child: Text(
+                                  'Actividad 1',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  const url =
+                                      'https://es.educaplay.com/juego/10265017-volcanes_del_ecuador.html';
+                                  if (await canLaunch(url) != null) {
+                                    await launch(url);
+                                  } else {
+                                    throw {print("Valimos")};
+                                  }
+                                },
+                              ),
+                              ElevatedButton(
+                                child: Text(
+                                  'Actividad 2',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  const url =
+                                      'https://es.educaplay.com/juego/10250334-volcanes_del_ecuador.html';
+                                  if (await canLaunch(url) != null) {
+                                    await launch(url);
+                                  } else {
+                                    throw {print("Valimos")};
+                                  }
+                                },
+                              ),
+                            ],
                           ),
                       ],
                     ),

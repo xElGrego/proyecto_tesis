@@ -99,25 +99,61 @@ class CarbonoDetails extends StatelessWidget {
                   ),
                 ),
                 if (index >= carbonoList.length - 1)
-                  Center(
-                    child: ElevatedButton(
-                      child: Text(
-                        'Video',
-                        style: TextStyle(
-                          fontSize: 18,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton(
+                        child: Text(
+                          'Video',
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
                         ),
+                        onPressed: () async {
+                          const url = 'https://www.youtube.com/watch?v=XI7plCTNG74';
+                          if (await canLaunch(url) != null) {
+                            await launch(url);
+                          } else {
+                            throw {print("Valimos")};
+                          }
+                        },
                       ),
-                      onPressed: () async {
-                        const url = 'https://www.youtube.com/watch?v=XI7plCTNG74';
-                        if (await canLaunch(url) != null) {
-                          await launch(url);
-                        } else {
-                          throw {print("Valimos")};
-                        }
-                      },
-                    ),
+                      ElevatedButton(
+                        child: Text(
+                          'Actividad 1',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        onPressed: () async {
+                          const url =
+                              'https://es.educaplay.com/juego/10264781-el_elemento_carbono.html';
+                          if (await canLaunch(url) != null) {
+                            await launch(url);
+                          } else {
+                            throw {print("Valimos")};
+                          }
+                        },
+                      ),
+                      ElevatedButton(
+                        child: Text(
+                          'Actividad 2',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        onPressed: () async {
+                          const url =
+                              'https://es.educaplay.com/juego/10249865-el_elemento_carbono.html';
+                          if (await canLaunch(url) != null) {
+                            await launch(url);
+                          } else {
+                            throw {print("Valimos")};
+                          }
+                        },
+                      ),
+                    ],
                   ),
-                Spacer(),
                 /* Container(
                   width: double.infinity,
                   padding: EdgeInsets.symmetric(horizontal: 32, vertical: 20),
@@ -136,6 +172,4 @@ class CarbonoDetails extends StatelessWidget {
       },
     );
   }
-
-  canLaunch(String url) {}
 }

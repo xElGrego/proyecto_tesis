@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_tesis/app/pages/planets/planets_actividad.dart';
 import 'package:proyecto_tesis/app/pages/zone_3d/planets/model_planet.dart';
 import 'package:proyecto_tesis/data/planetas.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../const.dart';
 
@@ -83,21 +84,42 @@ class DetailsPlanets extends StatelessWidget {
                                         ),
                                       ),
                                       if (index >= planetsList.length - 1)
-                                        ElevatedButton(
-                                          child: Text(
-                                            'Ir a la actividad',
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                            ),
-                                          ),
-                                          onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) => HomePlanetsActividad(),
+                                        Column(
+                                          children: [
+                                            ElevatedButton(
+                                              child: Text(
+                                                'Actividad 1',
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                ),
                                               ),
-                                            );
-                                          },
+                                              onPressed: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) => HomePlanetsActividad(),
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                            ElevatedButton(
+                                              child: Text(
+                                                'Actividad 2',
+                                                style: TextStyle(
+                                                  fontSize: 16,
+                                                ),
+                                              ),
+                                              onPressed: () async {
+                                                const url =
+                                                    'https://es.educaplay.com/juego/10264438-planetas.html';
+                                                if (await canLaunch(url) != null) {
+                                                  await launch(url);
+                                                } else {
+                                                  throw {print("Valimos")};
+                                                }
+                                              },
+                                            ),
+                                          ],
                                         ),
                                     ],
                                   ),

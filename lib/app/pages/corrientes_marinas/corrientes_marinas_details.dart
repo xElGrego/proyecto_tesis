@@ -34,7 +34,6 @@ class CorrientesMarinasDetails extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-      
                         Flexible(
                           flex: 3,
                           fit: FlexFit.loose,
@@ -106,24 +105,61 @@ class CorrientesMarinasDetails extends StatelessWidget {
                           ),
                         ),
                         Spacer(),
-                         if (index >= corrientesMarinasList.length - 1)
-                          Center(
-                            child: ElevatedButton(
-                              child: Text(
-                                'Video',
-                                style: TextStyle(
-                                  fontSize: 18,
+                        if (index >= corrientesMarinasList.length - 1)
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              ElevatedButton(
+                                child: Text(
+                                  'Video',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                  ),
                                 ),
+                                onPressed: () async {
+                                  const url = 'https://www.youtube.com/watch?v=YmclTIrD5Zs';
+                                  if (await canLaunch(url) != null) {
+                                    await launch(url);
+                                  } else {
+                                    throw {print("Valimos")};
+                                  }
+                                },
                               ),
-                              onPressed: () async {
-                                const url = 'https://www.youtube.com/watch?v=YmclTIrD5Zs';
-                                if (await canLaunch(url) != null) {
-                                  await launch(url);
-                                } else {
-                                  throw {print("Valimos")};
-                                }
-                              },
-                            ),
+                               ElevatedButton(
+                                child: Text(
+                                  'Actividad 1',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  const url =
+                                      'https://es.educaplay.com/juego/10252839-corrientes_marinas.html';
+                                  if (await canLaunch(url) != null) {
+                                    await launch(url);
+                                  } else {
+                                    throw {print("Valimos")};
+                                  }
+                                },
+                              ),
+                              ElevatedButton(
+                                child: Text(
+                                  'Actividad 2',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                onPressed: () async {
+                                  const url =
+                                      'https://es.educaplay.com/juego/10265051-corrientes_marinas.html';
+                                  if (await canLaunch(url) != null) {
+                                    await launch(url);
+                                  } else {
+                                    throw {print("Valimos")};
+                                  }
+                                },
+                              ),
+                            ],
                           ),
                       ],
                     ),
