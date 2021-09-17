@@ -125,7 +125,7 @@ class BacteriaNutricionDetail extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 child: Text(
-                                  'Actividad 2',
+                                  'Actividad 2\n(Ordena palabras)',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),

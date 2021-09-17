@@ -127,7 +127,7 @@ class CorrientesMarinasDetails extends StatelessWidget {
                               ),
                                ElevatedButton(
                                 child: Text(
-                                  'Actividad 1',
+                                  'Actividad 1\n(Relacionar columnas)',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),
@@ -144,7 +144,7 @@ class CorrientesMarinasDetails extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 child: Text(
-                                  'Actividad 2',
+                                  'Actividad 2\n(Relacionar mosaico)',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),

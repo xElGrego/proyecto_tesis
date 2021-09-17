@@ -127,7 +127,7 @@ class NevadosDetails extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 child: Text(
-                                  'Actividad 1',
+                                  'Actividad 1\n(Relacionar \ncolumnas)',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),
@@ -144,7 +144,7 @@ class NevadosDetails extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 child: Text(
-                                  'Actividad 2',
+                                  'Actividad 2\n(Unir con linea)',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),

@@ -88,7 +88,7 @@ class DetailsPlanets extends StatelessWidget {
                                           children: [
                                             ElevatedButton(
                                               child: Text(
-                                                'Actividad 1',
+                                                'Actividad 1 \n(Relaciona el par)',
                                                 style: TextStyle(
                                                   fontSize: 16,
                                                 ),
@@ -104,7 +104,7 @@ class DetailsPlanets extends StatelessWidget {
                                             ),
                                             ElevatedButton(
                                               child: Text(
-                                                'Actividad 2',
+                                                'Actividad 2\n(Crucigrama)',
                                                 style: TextStyle(
                                                   fontSize: 16,
                                                 ),

@@ -108,7 +108,7 @@ class BacteriaFormaDetail extends StatelessWidget {
                         if (index >= bacteriaFormaList.length - 1)
                           ElevatedButton(
                             child: Text(
-                              'Actividad 1',
+                              'Actividad 1\n(Unir con líneas)',
                               style: TextStyle(
                                 fontSize: 16,
                               ),

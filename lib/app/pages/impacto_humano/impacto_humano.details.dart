@@ -139,7 +139,7 @@ class ImpactoHumanoDetails extends StatelessWidget {
                               ),
                                ElevatedButton(
                                 child: Text(
-                                  'Actividad 1',
+                                  'Actividad 1\n(Test)',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),
@@ -156,7 +156,7 @@ class ImpactoHumanoDetails extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 child: Text(
-                                  'Actividad 2',
+                                  'Actividad 2\n(Relacionar columnas)',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),

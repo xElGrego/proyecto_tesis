@@ -110,7 +110,7 @@ class ContaminacionAguaDetails extends StatelessWidget {
                             children: [
                               ElevatedButton(
                                 child: Text(
-                                  'Actividad 1',
+                                  'Actividad 1\n(Sopa de letra)',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),
@@ -127,7 +127,7 @@ class ContaminacionAguaDetails extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 child: Text(
-                                  'Actividad 2',
+                                  'Actividad 2\n(Adivinanza)',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),

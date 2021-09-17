@@ -120,7 +120,7 @@ class CarbonoDetails extends StatelessWidget {
                       ),
                       ElevatedButton(
                         child: Text(
-                          'Actividad 1',
+                          'Actividad 1\n(Ordena palabras)',
                           style: TextStyle(
                             fontSize: 16,
                           ),
@@ -137,7 +137,7 @@ class CarbonoDetails extends StatelessWidget {
                       ),
                       ElevatedButton(
                         child: Text(
-                          'Actividad 2',
+                          'Actividad 2\n(Relaciona mosaico)',
                           style: TextStyle(
                             fontSize: 16,
                           ),

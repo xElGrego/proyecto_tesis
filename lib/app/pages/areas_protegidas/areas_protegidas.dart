@@ -112,7 +112,7 @@ class AreasProtegidasDetails extends StatelessWidget {
                             children: [
                               ElevatedButton(
                                 child: Text(
-                                  'Actividad 1',
+                                  'Actividad 1\n(Relaciona el par)',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),
@@ -128,7 +128,7 @@ class AreasProtegidasDetails extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 child: Text(
-                                  'Actividad 2',
+                                  'Actividad 2\n(Acertijos)',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),

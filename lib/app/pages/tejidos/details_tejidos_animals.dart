@@ -127,7 +127,7 @@ class TejidosAnimalsDetails extends StatelessWidget {
                             children: [
                               ElevatedButton(
                                 child: Text(
-                                  'Actividad 1',
+                                  'Actividad 1\n(Test)',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),
@@ -144,7 +144,7 @@ class TejidosAnimalsDetails extends StatelessWidget {
                               ),
                               ElevatedButton(
                                 child: Text(
-                                  'Actividad 2',
+                                  'Actividad\n(Crucigrama)',
                                   style: TextStyle(
                                     fontSize: 16,
                                   ),
